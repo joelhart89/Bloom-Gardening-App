@@ -56,9 +56,6 @@ const { state } = useAppData()
     })
   }
 
- // need: vegID, userID, 
- //       on card, 1, 
-
   
   return (
     <Card className={classes.root}>
