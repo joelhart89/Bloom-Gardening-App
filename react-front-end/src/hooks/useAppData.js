@@ -61,7 +61,7 @@ export default function useAppData() {
     }
     return axios.post('/api/plots_vegs', data)
       .then((res) =>  {
-        console.log('Garen_veg added')
+        console.log('data', data)
       }
     )
   }
@@ -106,6 +106,7 @@ export default function useAppData() {
     })
   }
 
+  // const deleteTaskFrom
 
 //remove break when we prevent from adding multiple ids of the same veg. 
   const deleteVegFromCart = function(props) {

@@ -50,12 +50,15 @@ export default function Maintenance() {
   const [tasks, setTasks] = useState([]);
   let { id } = useParams();
 
+  console.log('tasks1',tasks)
+
   console.log('id', id)
 
   useEffect(() => {
     getPlotTasks(id)
   }, [])
 
+  
   // get tasks per plots_vegs.
   const getPlotTasks = function(plotID) {
     return axios.get(`/api/plots_vegs/${plotID}`)
@@ -80,8 +83,20 @@ export default function Maintenance() {
           i++
         }
       })
+     
+      const result = waterdays.sort((a, b) => (a.time > b.time) ? 1 : -1);
+      // setTasks(result)
+      console.log('tasks', tasks)
+
       return waterdays.sort((a, b) => (a.time > b.time) ? 1 : -1);
+     
     }
+    // watering(tasks)
+
+   const removeTask=function(waterdays){
+    console.log('1', waterdays)
+     waterdays.splice(0,1)
+   } 
     
 
   return (
@@ -97,17 +112,21 @@ export default function Maintenance() {
             </tr>
           </thead>
           <tbody>
-          {watering(tasks).map(x => 
+
+          {watering(tasks).map((x, index) =>
+          
           <tr>
           <td>
-              {x.name}
+            {x.name}
+            {index}
             </td>
             <td>
             {x.time}
             </td>
             <td>
             <CardActions>
-              <Button size="small" variant="contained" color="primary">Complete</Button>
+              <Button size="small" variant="contained" color="primary"  onClick={removeTask}>
+                Complete</Button>
             </CardActions>
             </td>
           </tr>
