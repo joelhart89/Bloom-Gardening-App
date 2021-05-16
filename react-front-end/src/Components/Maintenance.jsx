@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import Notifications from './Notifications';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import useAppData from "../hooks/useAppData";
@@ -13,6 +14,7 @@ import {
   Link,
   useParams
 } from "react-router-dom";
+
 const axios = require('axios');
 
 const useStyles = makeStyles({
@@ -67,7 +69,7 @@ export default function Maintenance() {
       tasks.map(x => {
         let name = x.name
         let time = x.water_time
-        let i = 1
+        let i = 0
         while (i < 10) {
           let waterObj = {name: [name], time: time*i}
           waterdays.push(waterObj)
@@ -83,10 +85,13 @@ export default function Maintenance() {
         waterdays.push(weed)
         t++;
       }
+      //make the object i want and push it into waterdays array.  
       const sorted = waterdays.sort((a, b) => (a.time > b.time) ? 1 : -1);
       setTasks(sorted)
     }
   }
+
+  //
 
 
   // get tasks per plots_vegs.
@@ -106,7 +111,9 @@ export default function Maintenance() {
   }
     
   return (
+    
     <Card className={classes.root}>
+        <Notifications/>
       <CardContent className={classes.twidth}>
         <h2>Garden Chores</h2>
         <table className={classes.twidth}>
@@ -140,5 +147,6 @@ export default function Maintenance() {
         </table>
       </CardContent>
     </Card>
+  
   );
 }
