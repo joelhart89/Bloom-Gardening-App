@@ -9,7 +9,8 @@ import PlaceToVisit from './PlaceToVisit';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '350vh',
+    position: 'relative',
+    minHeight: '300vh',
     backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/cabbage.jpg'})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -29,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
       <CssBaseline />
        <Header />
       <PlaceToVisit />
-      <Footer/>
        </div>
     
 

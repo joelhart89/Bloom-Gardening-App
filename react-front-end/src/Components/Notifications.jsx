@@ -1,20 +1,35 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export default function Notifications() {
+export default function Notifications({tasks}) {
+//events could be tasks
+
+
 
   toast.configure({
-    autoClose: 200,
-    draggable: false,
-    //same as ToastContainer props
+    autoClose: 8000,
+  
+    //same as ToastContainer props//
+    
   })
 
-  const notify = () => toast.success("Time to Water!");
+  
+  //could pass plant name as prop..
+
+  //useEffect if array of time === 0 tasks changes then rerun this notifactionst i notify about 
+  const notify = (task) => toast.success(`time to ${task.name} `);
+
+ 
+
+  useEffect(() => {
+    console.log('taskssssss', tasks)
+    tasks.forEach(notify)
+  },[tasks])
+
   return (
     
-
     <div>
        <button onClick={notify}>Notify !</button>
         <ToastContainer />

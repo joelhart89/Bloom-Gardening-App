@@ -7,6 +7,7 @@ import Notifications from './Notifications';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import useAppData from "../hooks/useAppData";
+import notify from "../Components/Notifications"
 import {
   BrowserRouter as Router,
   Switch,
@@ -71,21 +72,25 @@ export default function Maintenance() {
         let time = x.water_time
         let i = 0
         while (i < 10) {
-          let waterObj = {name: [name], time: time*i}
+          let waterObj = {name: name, time: time*i}
           waterdays.push(waterObj)
           i++
         }
       })
       while (t <= 10) {
         if (t % 2 == 0) {
-          let fertilize = {name: 'Fertilize garden', time: 10*t/2}
+          let fertilize = {name: 'Fertilize', time: 10*t/2}
           waterdays.push(fertilize)
         }
-        let weed = {name: "Weed beds", time: 7*t}
+        let weed = {name: "Weed", time: 7*t}
         waterdays.push(weed)
         t++;
       }
-      //make the object i want and push it into waterdays array.  
+
+      console.log('waterdays',waterdays)
+      
+      
+
       const sorted = waterdays.sort((a, b) => (a.time > b.time) ? 1 : -1);
       setTasks(sorted)
     }
@@ -103,17 +108,21 @@ export default function Maintenance() {
   //   })
   //   .catch(err => `console`.log(err));
   // }
+
+
   
   const removeTask = function (name, time) {
     const found = tasks.find(task => task.name === name && task.time === time);
     const newTasks = tasks.filter(task => task !== found);
     setTasks(newTasks);
   }
-    
+   
+  const tasksToNotify = tasks.filter(task => task.time < 1)
   return (
     
     <Card className={classes.root}>
-        <Notifications/>
+        <Notifications tasks={tasksToNotify}
+        />
       <CardContent className={classes.twidth}>
         <h2>Garden Chores</h2>
         <table className={classes.twidth}>
