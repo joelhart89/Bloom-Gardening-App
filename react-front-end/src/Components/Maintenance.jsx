@@ -27,6 +27,7 @@ const useStyles = makeStyles({
     marginTop: '7%',
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'center',
     maxHeight: '300px',
     overflow: 'auto',
     // justifyContent: 'space-between'

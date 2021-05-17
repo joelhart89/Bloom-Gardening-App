@@ -7,6 +7,7 @@ import Dashboard from './Components/Dashboard'
 import Vegetables from './Components/Vegetables'
 import VegetableDrawer from './Components/VegetableDrawer';
 import Home from './Components/Home/Home'
+import Footer from './Components/Home/Footer'
 
 const useStyles = makeStyles({
   row: {
@@ -62,7 +63,9 @@ export default function App() {
        
 
         </main>
+        <Footer/>
       </Router>
+     
     </Switch>
   );
 }

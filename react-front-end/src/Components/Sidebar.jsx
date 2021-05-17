@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     fontFamily: 'Nunito',
   },
-  appBar: {
+  sideBar: {
     background: '#000000',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
-  appBarShift: {
+  sideBarShift: {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -48,6 +48,9 @@ const useStyles = makeStyles((theme) => ({
   },
   hide: {
     display: 'none',
+  },
+  colorText: {
+    color: '#5AFF3D',
   },
   drawer: {
     width: drawerWidth,
@@ -120,12 +123,12 @@ export default function Sidebar() {
       <AppBar
         position="fixed"
         color="default"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
+        className={clsx(classes.sideBar, {
+          [classes.sideBarShift]: open,
         })}
       >
         <Toolbar className="nav">
-
+       
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -137,6 +140,9 @@ export default function Sidebar() {
           >
             <MenuIcon />
           </IconButton>
+           <h1 className={classes.appbarTitle}>
+            <span className={classes.colorText}>Bloom.</span>2
+          </h1>
         </Toolbar>
 
       </AppBar>
