@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Nunito',
   },
   sideBar: {
-    background: '#000000',
+    backgroundColor: '#0c1408',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -44,13 +44,13 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: 36,
-    color: 'white',
+    color: '#40aa0c',
   },
   hide: {
     display: 'none',
   },
   colorText: {
-    color: '#5AFF3D',
+    color: '#fff',
   },
   drawer: {
     width: drawerWidth,

@@ -38,7 +38,7 @@ export default function Planting() {
   // }
 
   return (
-    <Card className="root">
+    <Card className="plantingroot">
       <CardContent className="twidth">
         <h2>Planting Instructions</h2>
         <table className="plant-instructions">

@@ -13,6 +13,8 @@ const useStyles = makeStyles({
   row: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: '250px',
   },
   gridContainer: {
     paddingLeft: "40px",
