@@ -38,6 +38,7 @@ export default function Planting() {
   // }
 
   return (
+
     <main className="-plant-card">
       <div className="plant-container">
         <h2>Planting Instructions</h2>

@@ -18,17 +18,23 @@ const drawerWidth = 300;
 
 const useStyles = makeStyles((theme) => ({
 
-  root: {
+  sidebar: {
     display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#000000',
+    height: '100vh',
+    fontFamily: 'Nunito',
   },
-  appBar: {
+  sideBar: {
+    backgroundColor: '#0c1408',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
-  appBarShift: {
+  sideBarShift: {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -38,9 +44,13 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: 36,
+    color: '#40aa0c',
   },
   hide: {
     display: 'none',
+  },
+  colorText: {
+    color: '#fff',
   },
   drawer: {
     width: drawerWidth,
@@ -108,17 +118,17 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="root">
+    <div className="sidebar">
       <CssBaseline />
       <AppBar
         position="fixed"
-        color="grey"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
+        color="default"
+        className={clsx(classes.sideBar, {
+          [classes.sideBarShift]: open,
         })}
       >
         <Toolbar className="nav">
-
+       
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -130,6 +140,9 @@ export default function Sidebar() {
           >
             <MenuIcon />
           </IconButton>
+           <h1 className={classes.appbarTitle}>
+            <span className={classes.colorText}>Bloom.</span>2
+          </h1>
         </Toolbar>
 
       </AppBar>

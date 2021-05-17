@@ -4,13 +4,13 @@ import styled from 'styled-components';
 
    
  const Box = styled.div`
-  padding: 80px 60px;
-  background: black;
+  padding-top: 10, 40, 10, 40 ; 
+  background: #0c1408;
   position: relative;
   bottom: 0;
   width: 100%;
   @media (max-width: 1000px) {
-    padding: 70px 30px;
+    padding: 40px 10px;
   }
 `;
    
@@ -20,13 +20,14 @@ const Container = styled.div`
     justify-content: center;
     max-width: 1000px;
     margin: 0 auto;
-    /* background: red; */
 `
    
  const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+  margin-top:  10px;
+  margin-bottom: 10px;
   margin-left: 60px;
 `;
    
@@ -44,30 +45,31 @@ const Row = styled.div`
    
  const FooterLink = styled.a`
   color: #fff;
-  margin-bottom: 20px;
-  font-size: 18px;
+  margin-bottom: 8px;
+  font-size: 16px;
   text-decoration: none;
    
   &:hover {
-      color: green;
+      color: #40aa0c;
       transition: 200ms ease-in;
   }
 `;
    
  const Heading = styled.p`
-  font-size: 24px;
-  color: #fff;
-  margin-bottom: 40px;
+  font-size: 22px;
+  color: #40aa0c;
+  margin-top: 0px;
+  margin-bottom:15px;
   font-weight: bold;
 `;
   
 const Footer = () => {
   return (
     <Box>
-      <h1 style={{ color: "green", 
+      <h1 style={{ color: "#40aa0c", 
                    textAlign: "center", 
-                   marginTop: "-50px" }}>
-        Bloom: A begginers guide to growing your own produce!
+                   marginTop: "-200px" }}>
+        Bloom: A beginners guide to growing your own produce!
       </h1>
       <Container>
         <Row>
@@ -81,8 +83,7 @@ const Footer = () => {
             <Heading>Resources</Heading>
             <FooterLink href="#">Blog</FooterLink>
             <FooterLink href="#">Garden-Construction</FooterLink>
-            <FooterLink href="#">Soil-Tips</FooterLink>
-            <FooterLink href="#">Planting</FooterLink>
+            <FooterLink href="#">Garden-Tips</FooterLink>
           </Column>
           <Column>
             <Heading>Contact Us</Heading>
@@ -91,13 +92,6 @@ const Footer = () => {
           </Column>
           <Column>
             <Heading>Social Media</Heading>
-            <FooterLink href="#">
-              <i className="fab fa-facebook-f">
-                <span style={{ marginLeft: "10px" }}>
-                  Facebook
-                </span>
-              </i>
-            </FooterLink>
             <FooterLink href="#">
               <i className="fab fa-instagram">
                 <span style={{ marginLeft: "10px" }}>

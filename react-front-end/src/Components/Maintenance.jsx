@@ -27,6 +27,7 @@ const useStyles = makeStyles({
     marginTop: '7%',
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'center',
     maxHeight: '300px',
     overflow: 'auto',
     // justifyContent: 'space-between'
@@ -55,7 +56,6 @@ export default function Maintenance() {
   const classes = useStyles();
   const [tasks, setTasks] = useState([]);
   const { state, markComplete } = useAppData();
-  console.log('state.maintenance', state.maintenance)
   const { id } = useParams();
 
   

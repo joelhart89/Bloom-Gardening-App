@@ -9,45 +9,46 @@ import Button from '@material-ui/core/Button';
 import useAppData from "../hooks/useAppData";
 import './VegetableCard.scss';
 
-// const useStyles = makeStyles({
-//   root: {
-//     width: '300px',
-//     height: '450px',
-//     marginLeft: '10%',
-//     marginTop: '10%',
-//   },
-//   media: {
-//     width: 300,
-//     height: 175,
-//   },
-//   card: {
-//     marginLeft: '20px',
-//     marginRight: '20px',
-//     marginTop: '5px',
-//     marginBottom: '15px',
-//   },
-//   peppers: {
-//     display: 'flex',
-//     justifyContent: 'flex-end',
-//     width: '20px',
-//     height: '40px',
-//   },
-//   column: {
-//     display: 'flex',
-//     flexDirection: 'column',
-//   },
-//   row: {
-//     display: 'flex',
-//     flexDirection: 'row',
-//     justifyContent: 'space-between',
-//     alignItems: 'center',
-//   },
-//   body: {
-//     lineHeight: '2',
-//     fontSize: '18px',
-//     color: 'grey',
-//   }
-// });
+const useStyles = makeStyles({
+  cardRoot: {
+    width: '300px',
+    height: '450px',
+    marginLeft: '10%',
+    marginTop: '10%',
+  },
+  media: {
+    width: 300,
+    height: 175,
+  },
+  card: {
+    marginLeft: '20px',
+    marginRight: '20px',
+    marginTop: '5px',
+    marginBottom: '15px',
+  },
+  peppers: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    width: '20px',
+    height: '40px',
+  },
+  column: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  row: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  cardbody: {
+    lineHeight: '2',
+    fontSize: '15px',
+    color: 'grey',
+  }
+});
+
 
 
 export default function VegetableCard(props) {
@@ -72,6 +73,7 @@ export default function VegetableCard(props) {
   }
 
   return (
+
     <div className="veg-card">
       <img
         className="media"
