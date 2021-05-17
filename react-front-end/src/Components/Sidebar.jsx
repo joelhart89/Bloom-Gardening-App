@@ -18,10 +18,16 @@ const drawerWidth = 300;
 
 const useStyles = makeStyles((theme) => ({
 
-  root: {
+  sidebar: {
     display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#000000',
+    height: '100vh',
+    fontFamily: 'Nunito',
   },
   appBar: {
+    background: '#000000',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -38,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: 36,
+    color: 'white',
   },
   hide: {
     display: 'none',
@@ -108,11 +115,11 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="root">
+    <div className="sidebar">
       <CssBaseline />
       <AppBar
         position="fixed"
-        color="grey"
+        color="default"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}

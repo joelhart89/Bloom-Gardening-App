@@ -41,7 +41,7 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  body: {
+  cardbody: {
     lineHeight: '1.5',
     fontSize: '15px',
     color: 'grey',
@@ -85,7 +85,7 @@ export default function VegetableCard(props) {
               <h2>{props.name}</h2>
               {level(props.difficulty)}
             </tr>
-            <tr className={classes.body}>
+            <tr className={classes.cardbody}>
               {props.description}
             </tr>
           </table>
