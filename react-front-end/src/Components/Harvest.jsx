@@ -5,8 +5,6 @@ import './Harvest.scss';
 const moment = require('moment');
 const axios = require('axios');
 
-// test to map over all planted veg and calculate harvest dates
-
 const getProgress = function (dtePlanted, daysToHarvest) {
   let planted = moment(dtePlanted);
   let currentDay = moment();
@@ -24,17 +22,27 @@ export default function Harvest() {
   const { state, setState, markComplete } = useAppData();
   console.log(state.harvest);
 
+  console.log('myHarvest', myHarvest)
 
   useEffect(() => {
+    getPlotHarvest(id)
   }, [state])
 
-  const removeHarvest = function (name) {
-    const found = state.harvest.find(harvest => harvest.name === name);
-    const newHarvest = state.harvest.filter(harvest => harvest !== found);
-    setState({ ...state, harvest: newHarvest })
+  const getPlotHarvest = function (id) {
+    const myInfo = state.harvest.filter(plant => plant.plot_id === parseInt(id) && plant.planted_date !== null);
+    setMyHarvest(myInfo)
+
   }
 
-  // getHarvestDate()
+  const removeHarvest = function (plotVegID, name) {
+    return axios.delete(`/api/plots_vegs/${plotVegID}`)
+    .then(res => {
+      const found = myHarvest.find(harvest => harvest.name === name);
+      const newHarvest = myHarvest.filter(harvest => harvest !== found);
+      setMyHarvest(newHarvest)
+    })
+    .catch(err => console.log(err));
+  }
 
   const harvestDate = function (planted, harvest) {
     const harvest_date = moment(planted).add(harvest, 'days')
