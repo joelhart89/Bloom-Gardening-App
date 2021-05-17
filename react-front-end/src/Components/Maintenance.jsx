@@ -15,7 +15,9 @@ import {
   Link,
   useParams
 } from "react-router-dom";
+import { now } from 'moment';
 
+const moment = require('moment');
 const axios = require('axios');
 
 const useStyles = makeStyles({
@@ -72,25 +74,29 @@ export default function Maintenance() {
         let time = x.water_time
         let i = 0
         while (i < 10) {
-          let waterObj = {name: name, time: time*i}
+          let waterObj = {name: `Water ${name}`, time: time*i}
           waterdays.push(waterObj)
           i++
         }
       })
       while (t <= 10) {
         if (t % 2 == 0) {
-          let fertilize = {name: 'Fertilize', time: 10*t/2}
+          let fertilize = {name: 'Fertilize Garden', time: 10*t/2}
           waterdays.push(fertilize)
         }
-        let weed = {name: "Weed", time: 7*t}
+        let weed = {name: "Weed Garden", time: 7*t}
         waterdays.push(weed)
         t++;
       }
 
       console.log('waterdays',waterdays)
       
-      
-
+      const waterTimer = function (time, water){
+      const water_time = moment(time).add(water, 'days')
+      const counter = moment(water_time).fromNow()
+      return counter;
+      }
+    
       const sorted = waterdays.sort((a, b) => (a.time > b.time) ? 1 : -1);
       setTasks(sorted)
     }
