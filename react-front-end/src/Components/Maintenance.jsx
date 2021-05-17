@@ -56,7 +56,6 @@ export default function Maintenance() {
   const classes = useStyles();
   const [tasks, setTasks] = useState([]);
   const { state, markComplete } = useAppData();
-  console.log('state.maintenance', state.maintenance)
   const { id } = useParams();
 
   
