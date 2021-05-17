@@ -1,71 +1,31 @@
+.veg-card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 0 0 5px 5px;
+  width: 350px;
+  margin: 20px;
+}
 
-  // .root {
-  //   margin-top: 10%;
-  //   margin-left: 8%;
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   min-width: 300;
-  //   width: 100%;
-  // }
+.veg-container {
+  padding: 5px 20px 7px 15px;
+}
 
-  // .image {
-  //   position: relative;
-  //   height: 200;
-   
-  //   &:hover, &$focusVisible: {
-  //     zIndex: 1;
-  //     & $imageBackdrop: {
-  //       opacity: 0.15;
-  //     }
-  //     & $imageMarked: {
-  //       opacity: 0;
-  //     }
-  //     & $imageTitle: {
-  //       border: 4px solid currentColor;
-  //     }
-  //   }
-  // }
-  
-  // .imageButton: {
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-  //   top: 0;
-  //   bottom: 0;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   color: theme.palette.common.white;
-  // }
-  // imageSrc: {
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-  //   top: 0;
-  //   bottom: 0;
-  //   backgroundSize: cover;
-  //   backgroundPosition: center 40%;
-  // }
-  // imageBackdrop: {
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-  //   top: 0;
-  //   bottom: 0;
-  //   backgroundColor: theme.palette.common.black;
-  //   opacity: 0.4;
-  //   transition: theme.transitions.create(opacity);
-  // }
-  // imageTitle: {
-  //   position: relative;
-  //   padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`;
-  // }
-  // imageMarked: {
-  //   height: 3;
-  //   width: 18;
-  //   backgroundColor: theme.palette.common.white;
-  //   position: absolute;
-  //   bottom: -2;
-  //   left: calc(50% - 9px);
-  //   transition: theme.transitions.create(opacity);
-  // }
+.media {
+  width: 100%;
+  height: 225px;
+  border-radius: 5px 5px 0 0;
+}
+
+.peppers {
+  display: flex;
+  justify-content: flex-end;
+  width: 20px;
+  height: 40px;
+}
+
+.body {
+  line-height: 2;
+  font-size: 14px;
+  color: grey;
+}
