@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import useAppData from "../hooks/useAppData";
 
 const useStyles = makeStyles({
-  root: {
+  cardRoot: {
     width: '300px',
     height: '450px',
     marginLeft: '10%',
@@ -71,7 +71,7 @@ export default function VegetableCard(props) {
   }
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.cardRoot}>
       <CardActionArea>
         <CardMedia />
         <img
