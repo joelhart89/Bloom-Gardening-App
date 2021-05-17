@@ -7,11 +7,14 @@ import Dashboard from './Components/Dashboard'
 import Vegetables from './Components/Vegetables'
 import VegetableDrawer from './Components/VegetableDrawer';
 import Home from './Components/Home/Home'
+import Footer from './Components/Home/Footer'
 
 const useStyles = makeStyles({
   row: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: '250px',
   },
   gridContainer: {
     paddingLeft: "40px",
@@ -62,7 +65,9 @@ export default function App() {
        
 
         </main>
+        <Footer/>
       </Router>
+     
     </Switch>
   );
 }

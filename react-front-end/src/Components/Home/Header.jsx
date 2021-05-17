@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
+import {AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
@@ -13,14 +13,14 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     fontFamily: 'Nunito',
   },
-  appbar: {
+ headerBar: {
     background: 'none',
   },
-  appbarWrapper: {
+ headerBarWrapper: {
     width: '80%',
     margin: '0 auto',
   },
-  appbarTitle: {
+ headerBarTitle: {
     flexGrow: '1',
   },
   icon: {
@@ -50,9 +50,9 @@ export default function Header() {
   }, []);
   return (
     <div className={classes.root} id="header">
-      <AppBar className={classes.appbar} elevation={0}>
-        <Toolbar className={classes.appbarWrapper}>
-          <h1 className={classes.appbarTitle}>
+      <AppBar className={classes.headerBar} elevation={0}>
+        <Toolbar className={classes.headerBarWrapper}>
+          <h1 className={classes.headerBarTitle}>
             B<span className={classes.colorText}>loom.</span>2
           </h1>
           <IconButton>

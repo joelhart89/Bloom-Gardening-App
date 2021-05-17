@@ -6,6 +6,9 @@ import Grid from "@material-ui/core/Grid";
 import VegetableDrawer from './VegetableDrawer'
 
 
+
+
+
 export default function Vegetables() {
   const [open, setOpen] = useState(false);
   const handleDrawerOpen = () => {
@@ -18,9 +21,15 @@ export default function Vegetables() {
   const[veg, setVeg] = useState([]);
    
   const useStyles = makeStyles({
+
     row: {
-     display: "flex"
+     display: "flex",
+     justifyContent:'space-evenly',
+     marginLeft: '500px',
+     margin: 100,
     },
+
+ 
   
   });
 
@@ -32,7 +41,7 @@ export default function Vegetables() {
   const renderVegetableCard = (veg) =>{
     const data = veg.map(element => {
       return (
-        <Grid item md={4}>
+        <Grid item md={3}>
         <VegetableCard
          {...element}
         onClick ={handleDrawerOpen} />
@@ -67,7 +76,7 @@ export default function Vegetables() {
   return (
     <div> 
     <Grid 
-    container spacing={16}>{renderVegetableCard(veg)}
+    container spacing={3}>{renderVegetableCard(veg)}
     </Grid> 
 
     <VegetableDrawer 

@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { Collapse } from '@material-ui/core';
 
 const useStyles = makeStyles({
-  root: {
+ root: {
     maxWidth: 645,
     background: 'rgba(0,0,0,0.5)',
     margin: '20px',
