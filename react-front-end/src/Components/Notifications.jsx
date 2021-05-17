@@ -6,23 +6,12 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Notifications({tasks}) {
 //events could be tasks
 
-
-
   toast.configure({
-    autoClose: 8000,
-  
-    //same as ToastContainer props//
+    autoClose: 10000,
     
   })
 
-  
-  //could pass plant name as prop..
-
-  //useEffect if array of time === 0 tasks changes then rerun this notifactionst i notify about 
   const notify = (task) => toast.dark(`Time To ${task.name} `);
- 
-
- 
 
   useEffect(() => {
     tasks.forEach(notify)
