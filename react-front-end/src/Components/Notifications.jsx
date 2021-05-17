@@ -19,12 +19,12 @@ export default function Notifications({tasks}) {
   //could pass plant name as prop..
 
   //useEffect if array of time === 0 tasks changes then rerun this notifactionst i notify about 
-  const notify = (task) => toast.success(`time to ${task.name} `);
+  const notify = (task) => toast.dark(`Time To ${task.name} `);
+ 
 
  
 
   useEffect(() => {
-    console.log('taskssssss', tasks)
     tasks.forEach(notify)
   },[tasks])
 

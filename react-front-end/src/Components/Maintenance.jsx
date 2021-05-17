@@ -54,17 +54,21 @@ const useStyles = makeStyles({
 export default function Maintenance() {
   const classes = useStyles();
   const [tasks, setTasks] = useState([]);
-  // const { buildTasks } = useAppData();
-  // let { id } = useParams();
   const { state, markComplete } = useAppData();
   console.log('state.maintenance', state.maintenance)
   const { id } = useParams();
-
 
   
   useEffect(() => {
     buildTasks(state.maintenance)
   }, [state])
+
+
+  const task_date = function (day) {
+    const harvest_date = moment().add(day, 'days')
+    const counter = moment(harvest_date).fromNow();
+    return counter;
+    }
 
   // builds the tasks for the plots. Used in Maintenance.jsx
   const buildTasks = function(tasks) {
@@ -75,58 +79,32 @@ export default function Maintenance() {
       myTasks.map(x => {
         let name = x.name
         let time = x.water_time
-        let i = 0
+        let i = 1
         while (i < 10) {
           let waterObj = {name: `Water ${name}`, time: time*i}
+          let fertilize = {name: 'Fertilize Garden', time: 10*i/2}
+          let weed = {name: "Weed Garden", time: 7*i}
+          if (i % 2 == 0 ) {
+            waterdays.push(fertilize)
+          }
           waterdays.push(waterObj)
-          i++
+          waterdays.push(weed)
+          i++;
         }
       })
-      while (t <= 10) {
-        if (t % 2 == 0) {
-          let fertilize = {name: 'Fertilize Garden', time: 10*t/2}
-          waterdays.push(fertilize)
-        }
-        let weed = {name: "Weed Garden", time: 7*t}
-        waterdays.push(weed)
-        t++;
-      }
-
-      console.log('waterdays',waterdays)
-      
-      const waterTimer = function (time, water){
-      const water_time = moment(time).add(water, 'days')
-      const counter = moment(water_time).fromNow()
-      return counter;
-      }
-    
       const sorted = waterdays.sort((a, b) => (a.time > b.time) ? 1 : -1);
       setTasks(sorted)
     }
   }
-
-  //
-
-
-  // get tasks per plots_vegs.
-  // const getPlotTasks = function(plotID) {
-  //   return axios.get(`/api/plots_vegs/${plotID}`)
-  //   .then(res => {
-  //     const temp = buildTasks(res.data)
-  //     setTasks(temp)
-  //   })
-  //   .catch(err => `console`.log(err));
-  // }
-
-
   
   const removeTask = function (name, time) {
     const found = tasks.find(task => task.name === name && task.time === time);
     const newTasks = tasks.filter(task => task !== found);
     setTasks(newTasks);
   }
+ 
    
-  const tasksToNotify = tasks.filter(task => task.time < 1)
+  const tasksToNotify = tasks.filter(task => task.time <= 3)
   return (
     
     <Card className={classes.root}>
@@ -149,7 +127,7 @@ export default function Maintenance() {
               {x.name}
             </td>
             <td>
-              {x.time}
+              {task_date(x.time)}
             </td>
             <td>
             <CardActions>
