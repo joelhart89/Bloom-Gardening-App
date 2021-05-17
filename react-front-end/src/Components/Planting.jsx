@@ -34,8 +34,8 @@ export default function Planting() {
   }
 
   return (
-    <Card className="root">
-      <CardContent className="twidth">
+    <main className="-plant-card">
+      <div className="plant-container">
         <h2>Planting Instructions</h2>
         <table className="plant-instructions">
           <thead >
@@ -80,7 +80,7 @@ export default function Planting() {
             )}
           </tbody>
         </table>
-      </CardContent>
-    </Card>
+      </div>
+    </main>
   );
 }
