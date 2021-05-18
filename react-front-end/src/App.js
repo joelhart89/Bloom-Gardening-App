@@ -30,18 +30,9 @@ export default function App() {
 
   return (
     <Switch>
-<<<<<<< HEAD
-   
-
-
-        <Router>
-        <Route path='/home'>
-          <Home/> 
-=======
       <Router>
         <Route path="/home">
           <Home />
->>>>>>> 118cdc0fd8a1052361ca27c2385cb7abf6e23fe8
         </Route>
 
         <Route path="/">
