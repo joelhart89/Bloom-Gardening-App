@@ -17,12 +17,9 @@ const getProgress = function (dtePlanted, daysToHarvest) {
 }
 
 export default function Harvest() {
-  // const classes = useStyles();
-  let { id } = useParams();
+  const { id } = useParams();
   const { state, setState, markComplete } = useAppData();
-  console.log(state.harvest);
-
-  console.log('myHarvest', myHarvest)
+  const [myHarvest, setMyHarvest] = useState([]);
 
   useEffect(() => {
     getPlotHarvest(id)
@@ -31,25 +28,24 @@ export default function Harvest() {
   const getPlotHarvest = function (id) {
     const myInfo = state.harvest.filter(plant => plant.plot_id === parseInt(id) && plant.planted_date !== null);
     setMyHarvest(myInfo)
-
   }
 
-  const removeHarvest = function (plotVegID, name) {
-    return axios.delete(`/api/plots_vegs/${plotVegID}`)
-    .then(res => {
-      const found = myHarvest.find(harvest => harvest.name === name);
-      const newHarvest = myHarvest.filter(harvest => harvest !== found);
-      setMyHarvest(newHarvest)
-    })
-    .catch(err => console.log(err));
-  }
 
-  const harvestDate = function (planted, harvest) {
-    const harvest_date = moment(planted).add(harvest, 'days')
-    const counter = moment(harvest_date).fromNow();
-    console.log(harvest);
-    return counter;
-  }
+  // const removeHarvest = function (plotVegID, name) {
+  //   return axios.delete(`/api/plots_vegs/${plotVegID}`)
+  //   .then(res => {
+  //     const found = myHarvest.find(harvest => harvest.name === name);
+  //     const newHarvest = myHarvest.filter(harvest => harvest !== found);
+  //     setMyHarvest(newHarvest)
+  //   })
+  //   .catch(err => console.log(err));
+  // }
+
+  // const harvest_date = function (planted, harvest) {
+  // const harvest_date = moment(planted).add(harvest, 'days')
+  // const counter = moment(harvest_date).fromNow();
+  // return counter;
+  // }
 
   return (
     <main className="harvest-card">
@@ -63,8 +59,8 @@ export default function Harvest() {
               <th></th>
             </tr>
           </thead>
-          <tbody className="body">
-            {state.harvest.map(x =>
+          <tbody className="harvest-body">
+            {myHarvest.map(x =>
               <tr>
                 <td >
                   <img
