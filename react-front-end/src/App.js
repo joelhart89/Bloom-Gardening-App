@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Sidebar from './Components/Sidebar';
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,55 +15,46 @@ const useStyles = makeStyles({
     flexDirection: 'row',
     justifyContent: 'center',
     marginBottom: '250px',
+
   },
   gridContainer: {
     paddingLeft: "40px",
     paddingRight: "40px",
     justifyContent: "center",
     spacing: 4,
-  }
+  },
 });
 
 export default function App() {
   const classes = useStyles();
 
-
   return (
     <Switch>
-   
-
-
-        <Router>
-
-        <Route path='/home'>
-        <Home/> 
+      <Router>
+        <Route path="/home">
+          <Home />
         </Route>
 
-        <Route path='/'>
-            
-            <Sidebar />
-            <nav> 
-            </nav>
-          </Route>
+        <Route path="/">
+          <Sidebar />
+          <nav></nav>
+        </Route>
         <main className="layout">
-          <Route path="/tasks/:id" >
+          <Route path="/tasks/:id">
             <div className="App">
               <div className={classes.row}>
                 <Dashboard />
               </div>
             </div>
           </Route>
-          <Route path='/planning'>
-           <Vegetables/>
-           <VegetableDrawer/>
+          <Route path="/planning">
+            <Vegetables />
+            <VegetableDrawer />
           </Route>
 
-          <Route path='/vegetables'>
+          <Route path="/vegetables">
             <VegetableAbout />
           </Route>
-
-       
-
         </main>
         <Footer/>
       </Router>

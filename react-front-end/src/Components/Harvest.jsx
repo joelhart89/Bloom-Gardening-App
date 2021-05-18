@@ -33,6 +33,7 @@ export default function Harvest() {
   }
 
 
+
   const removeHarvest = function (plotVegID, name) {
     return axios.delete(`/api/plots_vegs/${plotVegID}`)
     .then(res => {
