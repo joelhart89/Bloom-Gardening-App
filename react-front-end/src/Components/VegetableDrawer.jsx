@@ -122,11 +122,6 @@ export default function VegetableDrawer(props) {
 
   const buildOnClick = function (cart) {
     addPlot(cart)
-      // .then(() => {
-      //   console.log('state-basket', state.basket)
-      //   console.log('state-basket-vid', state.basket[0].vid)
-      //   console.log('success! we did it!!')
-      // })
   }
 
   const onClick = function (x) {
@@ -162,21 +157,11 @@ export default function VegetableDrawer(props) {
         />
       </div>
       <Divider />
-
-      {/* <List > */}
       <table >
-        <thead >
-          <tr >
-            <th>t</th>
-            <th>t</th>
-            <th>t</th>
-          </tr>
-        </thead>
         <tbody >
         {state.basket.map((x, i) =>
         <tr className="basketRows">
           <td>
-          {/* <ListItem button key={i}> */}
               <img
                 className={classes.vegAvatar}
                 src={x.avatar_url}
@@ -184,19 +169,19 @@ export default function VegetableDrawer(props) {
               />
             </td>
             <td>
-              <ListItemText className="td" primary={x.name} />
+              <div className="td">
+                {x.name}
+              </div>
             </td>
             <td>
             <ListItemIcon>
               <DeleteIcon onClick={() => onClick(x)} />
             </ListItemIcon>
             </td>
-          {/* </ListItem> */}
           </tr>
         )}
         </tbody>
         </table>
-      {/* </List> */}
       <Divider />
       <div className={classes.vegdrawerHeader}>
         <IconButton onClick={handleDrawerClose}>
