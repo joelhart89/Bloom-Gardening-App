@@ -3,13 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import Header from './Header';
 import Footer from './Footer';
-import PlaceToVisit from './PlaceToVisit';
+import Pictures from './Pictures';
 
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '350vh',
+    position: 'relative',
+    minHeight: '250vh',
     backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/cabbage.jpg'})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -28,8 +29,7 @@ const useStyles = makeStyles((theme) => ({
       <div className={classes.root}>
       <CssBaseline />
        <Header />
-      <PlaceToVisit />
-      <Footer/>
+      <Pictures />
        </div>
     
 

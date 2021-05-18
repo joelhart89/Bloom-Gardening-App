@@ -31,6 +31,8 @@ export default function Harvest() {
     const myInfo = state.harvest.filter(plant => plant.plot_id === parseInt(id) && plant.planted_date !== null);
     setMyHarvest(myInfo)
   }
+ 
+
 
 
   const removeHarvest = function (plotVegID, name) {
