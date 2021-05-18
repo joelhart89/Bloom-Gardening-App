@@ -5,3 +5,15 @@
   width: 100%;
   justify-content: space-between;
 }
+
+.basketRows {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.td {
+  display: flex;
+  justify-content: flex-start;
+  width: 50px;
+}

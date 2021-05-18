@@ -94,13 +94,7 @@ const useStyles = makeStyles((theme) => ({
   vegAvatar: {
     maxWidth: '40px',
     maxHeight: '40px',
-    marginLeft: '40px'
-    // display: 'flex',
-    // justifyContent: 'flex-end',
-    // alignItems: 'center',
-  },
-  name: {
-    marginLeft: '20px',
+    marginLeft: '25px'
   },
   buttonFont: {
     fontSize: "0.8em",
@@ -168,21 +162,28 @@ export default function VegetableDrawer(props) {
       </h2>
       <Divider />
 
-      <List >
-        <table className="items">
+      {/* <List > */}
+      <table >
+        <thead >
+          <tr >
+            <th>t</th>
+            <th>t</th>
+            <th>t</th>
+          </tr>
+        </thead>
+        <tbody >
         {state.basket.map((x, i) =>
-          <tbody className="items">
-        <tr >
+        <tr className="basketRows">
           <td>
           {/* <ListItem button key={i}> */}
               <img
-                className={classes.avatar}
+                className={classes.vegAvatar}
                 src={x.avatar_url}
                 alt="img"
               />
-              </td>
+            </td>
             <td>
-            <ListItemText className={classes.name} primary={x.name} />
+              <ListItemText className="td" primary={x.name} />
             </td>
             <td>
             <ListItemIcon>
@@ -191,10 +192,10 @@ export default function VegetableDrawer(props) {
             </td>
           {/* </ListItem> */}
           </tr>
-          </tbody>
         )}
+        </tbody>
         </table>
-      </List>
+      {/* </List> */}
       <Divider />
       <div className={classes.vegdrawerHeader}>
         <IconButton onClick={handleDrawerClose}>
