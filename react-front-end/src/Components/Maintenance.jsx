@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import useAppData from "../hooks/useAppData";
 import {  BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
 import './Maintenance.scss';
+import Notifications from './Notifications';
+import 'moment';
+const moment = require('moment');
+
 const axios = require('axios');
 
 export default function Maintenance() {
