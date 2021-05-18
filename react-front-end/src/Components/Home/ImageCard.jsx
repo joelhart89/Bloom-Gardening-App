@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     fontFamily: 'Nunito',
     fontWeight: 'bold',
     fontSize: '2rem',
-    color: '#fff',
+    color: '#b1d2db',
   },
   desc: {
     fontFamily: 'Nunito',

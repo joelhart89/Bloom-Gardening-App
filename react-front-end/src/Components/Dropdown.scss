@@ -1,17 +1,28 @@
 .main {
   width: 100%;
   max-width: 360px;
-  background-color: #0c1408;
-  color: #40aa0c;
+  background-color: #202020;
+  color: #b1d2db;
   font-weight: bold;
   height: 100%;
 }
 .nested {
+  background-color:#202020 ;
   padding-left: 20px;
+  
 }
 .icon {
-  color: #40aa0c;
+  color: #b1d2db;
 }
 .a {
+  color:#b1d2db;
   font-weight: bold;
+  text-decoration: none;
 }
+
+.toolbar {
+background-color: #202020;
+height: 85px;
+border-style: #202020;
+}
+

@@ -17,10 +17,9 @@ const getProgress = function (dtePlanted, daysToHarvest) {
 }
 
 export default function Harvest() {
-  // const classes = useStyles();
-  let { id } = useParams();
+  const { id } = useParams();
   const { state, setState, markComplete } = useAppData();
-  console.log(state.harvest);
+  const [myHarvest, setMyHarvest] = useState([]);
 
   console.log('myHarvest', myHarvest)
 
@@ -31,9 +30,7 @@ export default function Harvest() {
   const getPlotHarvest = function (id) {
     const myInfo = state.harvest.filter(plant => plant.plot_id === parseInt(id) && plant.planted_date !== null);
     setMyHarvest(myInfo)
-
   }
- 
 
 
   const removeHarvest = function (plotVegID, name) {
@@ -46,12 +43,13 @@ export default function Harvest() {
     .catch(err => console.log(err));
   }
 
-  const harvestDate = function (planted, harvest) {
-    const harvest_date = moment(planted).add(harvest, 'days')
-    const counter = moment(harvest_date).fromNow();
-    console.log(harvest);
-    return counter;
+  const harvest_date = function (planted, harvest) {
+  const harvest_date = moment(planted).add(harvest, 'days')
+  const counter = moment(harvest_date).fromNow();
+  return counter;
   }
+
+  // const myHarvest = state.harvest.filter(plant => plant.plot_id === parseInt(id) && plant.planted_date !== null);
 
   return (
     <main className="harvest-card">
@@ -66,7 +64,7 @@ export default function Harvest() {
             </tr>
           </thead>
           <tbody className="body">
-            {state.harvest.map(x =>
+            {myHarvest.map(x =>
               <tr>
                 <td >
                   <img

@@ -5,7 +5,7 @@ import styled from 'styled-components';
    
  const Box = styled.div`
   padding-top: 10, 40, 10, 40 ; 
-  background: #0c1408;
+  background: #202020;
   position: relative;
   bottom: 0;
   width: 100%;
@@ -44,20 +44,20 @@ const Row = styled.div`
 `;
    
  const FooterLink = styled.a`
-  color: #fff;
+  color: #b1d2db;
   margin-bottom: 8px;
   font-size: 16px;
   text-decoration: none;
    
   &:hover {
-      color: #40aa0c;
+      color: #b1d2db;
       transition: 200ms ease-in;
   }
 `;
    
  const Heading = styled.p`
   font-size: 22px;
-  color: #40aa0c;
+  color: #b1d2db;
   margin-top: 0px;
   margin-bottom:15px;
   font-weight: bold;
@@ -66,7 +66,7 @@ const Row = styled.div`
 const Footer = () => {
   return (
     <Box>
-      <h1 style={{ color: "#40aa0c", 
+      <h1 style={{ color: "#b1d2db", 
                    textAlign: "center", 
                    marginTop: "-200px" }}>
         Bloom: A beginners guide to growing your own produce!

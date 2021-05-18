@@ -24,21 +24,21 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: '1',
   },
   icon: {
-    color: '#fff',
+    color: '#b1d2db',
     fontSize: '2rem',
   },
   colorText: {
-    color: '#5AFF3D',
+    color: '#b1d2db',
   },
   container: {
     textAlign: 'center',
   },
   title: {
-    color: '#fff',
+    color: '#b1d2db',
     fontSize: '4.5rem',
   },
   goDown: {
-    color: '#5AFF3D',
+    color: '#b1d2db',
     fontSize: '4rem',
   },
 }));
