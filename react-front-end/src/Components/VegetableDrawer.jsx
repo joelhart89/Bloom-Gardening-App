@@ -13,11 +13,13 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import useAppData from "../hooks/useAppData";
+import './VegetableDrawer.scss';
+
 
 const drawerWidth = 300;
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  vegroot: {
     display: "flex"
   },
   vegDrawer: {
@@ -45,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth
   },
-  drawerHeader: {
+  vegdrawerHeader: {
     display: "flex",
     alignItems: "center",
     padding: theme.spacing(0, 1),
@@ -53,20 +55,23 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: "flex-start"
   },
-  drawerHeaderTitle: {
+  vegdrawerHeaderTitle: {
     marginLeft: 15,
-    justifyContent: "space-between"
+    marginTop:25,
+    flexDirection: "row",
+    // justifyContent: "space-between",
+    alignItems: "center"
   },
   ShoppingBasketIcon: {
     padding: '10px',
   },
   buildGardenButton: {
-    marginTop: 500,
+    marginTop: 25,
     marginBottom: -100,
     borderLeft: 150,
     borderRight: 150,
   },
-  content: {
+  vegcontent: {
     flexGrow: 1,
     padding: theme.spacing(3),
     transition: theme.transitions.create("margin", {
@@ -86,8 +91,24 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '40px',
     maxHeight: '40px',
   },
+  vegAvatar: {
+    maxWidth: '40px',
+    maxHeight: '40px',
+    marginLeft: '40px'
+    // display: 'flex',
+    // justifyContent: 'flex-end',
+    // alignItems: 'center',
+  },
   name: {
     marginLeft: '20px',
+  },
+  buttonFont: {
+    fontSize: "0.8em",
+  },
+  test: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: "space-between",
   }
 }));
 
@@ -129,7 +150,7 @@ export default function VegetableDrawer(props) {
         paper: classes.drawerPaper
       }}
     >
-      <div className={classes.drawerHeader}>
+      <div className={classes.vegdrawerHeader}>
         <IconButton onClick={handleDrawerClose}>
           {theme.direction === "rtl" ? (
             <ChevronLeftIcon />
@@ -138,35 +159,53 @@ export default function VegetableDrawer(props) {
           )}
         </IconButton>
       </div>
-      <h2 className={classes.drawerHeaderTitle}> Vegetable Basket
-        <ShoppingBasketIcon color="primary" />
+      <h2 className={classes.vegdrawerHeaderTitle}> Vegetable Basket
+      <img
+        className={classes.vegAvatar}
+        src={"../images/avatars/vegetable-box.png"}
+        alt="img"
+      />
       </h2>
       <Divider />
 
-      <List>
+      <List >
+        <table className="items">
         {state.basket.map((x, i) =>
-          <ListItem button key={i}>
+          <tbody className="items">
+        <tr >
+          <td>
+          {/* <ListItem button key={i}> */}
               <img
                 className={classes.avatar}
                 src={x.avatar_url}
                 alt="img"
               />
+              </td>
+            <td>
             <ListItemText className={classes.name} primary={x.name} />
+            </td>
+            <td>
             <ListItemIcon>
               <DeleteIcon onClick={() => onClick(x)} />
             </ListItemIcon>
-          </ListItem>
+            </td>
+          {/* </ListItem> */}
+          </tr>
+          </tbody>
         )}
-
+        </table>
       </List>
       <Divider />
-      <div className={classes.drawerHeader}>
+      <div className={classes.vegdrawerHeader}>
         <IconButton onClick={handleDrawerClose}>
           {theme.direction === "rtl" ? (
             <ChevronLeftIcon />
           ) : (
             <ChevronRightIcon />
           )}
+          <div className={classes.buttonFont}>
+            Close
+          </div>
         </IconButton>
       </div>
       <Button onClick={() => buildOnClick(state.basket)} variant="contained" color="primary" className={classes.buildGardenButton}>
