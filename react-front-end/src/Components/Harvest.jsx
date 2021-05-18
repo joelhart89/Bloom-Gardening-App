@@ -21,8 +21,6 @@ export default function Harvest() {
   const { state, setState, markComplete } = useAppData();
   const [myHarvest, setMyHarvest] = useState([]);
 
-  console.log('myHarvest', myHarvest)
-
   useEffect(() => {
     getPlotHarvest(id)
   }, [state])
@@ -32,23 +30,21 @@ export default function Harvest() {
     setMyHarvest(myInfo)
   }
 
+  // const removeHarvest = function (plotVegID, name) {
+  //   return axios.delete(`/api/plots_vegs/${plotVegID}`)
+  //   .then(res => {
+  //     const found = myHarvest.find(harvest => harvest.name === name);
+  //     const newHarvest = myHarvest.filter(harvest => harvest !== found);
+  //     setMyHarvest(newHarvest)
+  //   })
+  //   .catch(err => console.log(err));
+  // }
 
-
-  const removeHarvest = function (plotVegID, name) {
-    return axios.delete(`/api/plots_vegs/${plotVegID}`)
-    .then(res => {
-      const found = myHarvest.find(harvest => harvest.name === name);
-      const newHarvest = myHarvest.filter(harvest => harvest !== found);
-      setMyHarvest(newHarvest)
-    })
-    .catch(err => console.log(err));
-  }
-
-  const harvest_date = function (planted, harvest) {
-  const harvest_date = moment(planted).add(harvest, 'days')
-  const counter = moment(harvest_date).fromNow();
-  return counter;
-  }
+  // const harvest_date = function (planted, harvest) {
+  // const harvest_date = moment(planted).add(harvest, 'days')
+  // const counter = moment(harvest_date).fromNow();
+  // return counter;
+  // }
 
   // const myHarvest = state.harvest.filter(plant => plant.plot_id === parseInt(id) && plant.planted_date !== null);
 
@@ -64,7 +60,8 @@ export default function Harvest() {
               <th></th>
             </tr>
           </thead>
-          <tbody className="body">
+          <tbody className="harvest-body">
+
             {myHarvest.map(x =>
               <tr>
                 <td >

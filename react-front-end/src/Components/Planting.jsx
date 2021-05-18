@@ -3,6 +3,7 @@ import useAppData from "../hooks/useAppData";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+import 'font-awesome/css/font-awesome.min.css';
 import './Planting.scss';
 
 const axios = require('axios');
@@ -38,10 +39,9 @@ export default function Planting() {
   // }
 
   return (
-
-    <main className="-plant-card">
+    <main className="plant-card">
       <div className="plant-container">
-        <h2>Planting Instructions</h2>
+        <h2 className="plant-hdr">Planting Instructions</h2>
         <table className="plant-instructions">
           <thead >
             <tr >
@@ -53,7 +53,8 @@ export default function Planting() {
               <th>Completed</th>
             </tr>
           </thead>
-          <tbody className="body">
+
+          <tbody className="plant-body">
             {plants.map((x, i) =>
               <tr className={isPlanted(x.planted_date) ? "strike" : ""}>
                 <td >
@@ -67,20 +68,22 @@ export default function Planting() {
                   <strong>{x.name}</strong>
                 </td>
                 <td>
-                  <strong>{x.sun_required} hours per day</strong>
+                  {x.sun_required} hours per day
                 </td>
                 <td>
-                  <strong>{x.space} inches</strong>
+                  {x.space} inches
                 </td>
                 <td>
-                  <strong>{x.depth}cm</strong>
+                  {x.depth}cm
                 </td>
                 <td>
                   <input
                     type="checkbox"
-                    onClick={() => {markComplete(plants[i]); 
-                      // removePlanting(x.name);
-                      plant(x.id)}}
+                    {...isPlanted(x.planted_date) ? "checked" : "unchecked"}
+                    onClick={() => {
+                      markComplete(plants[i]);
+                      plant(x.id);
+                    }}
                   />
                 </td>
               </tr>
