@@ -158,11 +158,9 @@ export default function Sidebar() {
         }}
       >
         <div className="toolbar">
-          <h1 className={classes.appbarTitle}>
-            <span className={classes.colorText}>Welcome.</span>
-          </h1>
+          <h2 className={classes.colorText}> Dashboard </h2>
 
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={handleDrawerClose}className={classes.colorText}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
             ) : (
