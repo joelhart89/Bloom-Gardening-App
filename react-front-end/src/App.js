@@ -31,9 +31,8 @@ export default function App() {
 
 
         <Router>
-
         <Route path='/home'>
-        <Home/> 
+          <Home/> 
         </Route>
 
         <Route path='/'>
