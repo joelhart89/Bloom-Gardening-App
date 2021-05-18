@@ -153,13 +153,14 @@ export default function VegetableDrawer(props) {
           )}
         </IconButton>
       </div>
-      <h2 className={classes.vegdrawerHeaderTitle}> Vegetable Basket
-      <img
-        className={classes.vegAvatar}
-        src={"../images/avatars/vegetable-box.png"}
-        alt="img"
-      />
-      </h2>
+      <div className="vegheader">
+        <h2> Vegetable Basket</h2>
+        <img
+          className={classes.vegAvatar}
+          src={"../images/avatars/vegetable-box.png"}
+          alt="img"
+        />
+      </div>
       <Divider />
 
       {/* <List > */}
