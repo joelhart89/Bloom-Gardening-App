@@ -30,7 +30,6 @@ export default function Harvest() {
     setMyHarvest(myInfo)
   }
 
-
   // const removeHarvest = function (plotVegID, name) {
   //   return axios.delete(`/api/plots_vegs/${plotVegID}`)
   //   .then(res => {
@@ -47,6 +46,8 @@ export default function Harvest() {
   // return counter;
   // }
 
+  // const myHarvest = state.harvest.filter(plant => plant.plot_id === parseInt(id) && plant.planted_date !== null);
+
   return (
     <main className="harvest-card">
       <div className="harvest-container">
@@ -60,6 +61,7 @@ export default function Harvest() {
             </tr>
           </thead>
           <tbody className="harvest-body">
+
             {myHarvest.map(x =>
               <tr>
                 <td >

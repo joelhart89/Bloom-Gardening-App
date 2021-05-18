@@ -8,7 +8,7 @@ import Collapse from '@material-ui/core/Collapse';
 import Divider from '@material-ui/core/Divider';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
+
 import EcoIcon from '@material-ui/icons/Eco';
 import BuildIcon from '@material-ui/icons/Build';
 import AddIcon from '@material-ui/icons/Add';
@@ -60,7 +60,7 @@ export default function NestedList() {
         <List component="div" disablePadding>
           <ListItem button onClick={() => redirect(x.id)}  className="nested">
             <ListItemIcon>
-              <StarBorder className="icon"/>
+
             </ListItemIcon>
               <ListItemText primary={`Plot ${x.id}`} />
           </ListItem>
@@ -68,7 +68,7 @@ export default function NestedList() {
         )}
       </Collapse>
       {/* Map ends here! */}
-      <Link to="/vegetables">
+      <Link to="/vegetables"className='a'>
         <ListItem button>
           <ListItemIcon>
             <EcoIcon className="icon"/>
@@ -78,7 +78,7 @@ export default function NestedList() {
         </Link>
       <Divider />
 
-      <Link to="/vegetables">
+      <Link to="/vegetables"className='a'>
         <ListItem button>
           <ListItemIcon>
             <EcoIcon className="icon"/>
@@ -86,7 +86,7 @@ export default function NestedList() {
             <ListItemText primary="About" />
         </ListItem>
       </Link>
-      <Link to="/vegetables">
+      <Link to="/vegetables"className='a'>
         <ListItem button>
           <ListItemIcon>
             <BuildIcon className="icon"/>
@@ -94,7 +94,7 @@ export default function NestedList() {
             <ListItemText primary="Resources" />
         </ListItem>
       </Link>
-      <Link to="/vegetables">
+      <Link to="/vegetables"className='a'>
         <ListItem button>
           <ListItemIcon>
             <SettingsIcon className="icon"/>

@@ -20,13 +20,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex"
   },
-  appBar: {
+  vegDrawer: {
+    background: 'none',
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
     })
   },
-  appBarShift: {
+  vegDrawerShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
