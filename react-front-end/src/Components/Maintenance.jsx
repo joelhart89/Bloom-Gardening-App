@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import CheckCircleRoundedIcon from '@material-ui/icons/CheckCircleRounded';
 import './Maintenance.scss';
 import Notifications from './Notifications';
+import 'moment';
+const moment = require('moment');
 
 export default function Maintenance() {
   const [tasks, setTasks] = useState([]);
@@ -41,6 +43,12 @@ export default function Maintenance() {
       setTasks(sorted)
     }
   }
+  
+  const task_date = function (day) {
+    const harvest_date = moment().add(day, 'days')
+    const counter = moment(harvest_date).fromNow();
+    return counter;
+  }
 
   const removeTask = function (name, time) {
     const found = tasks.find(task => task.name === name && task.time === time);
@@ -71,7 +79,7 @@ export default function Maintenance() {
                   <strong>{x.name}</strong>
                 </td>
                 <td>
-                  in {x.time} days
+                  {task_date(x.time)}
                 </td>
                 <td>
                     <CheckCircleRoundedIcon className="done" onClick={() => removeTask(x.name, x.time)} />
