@@ -23,8 +23,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
-
 export default function Vegetables() {
   const [open, setOpen] = useState(false);
   const [info, setInfo] = React.useState(true);
@@ -54,16 +52,6 @@ export default function Vegetables() {
     }) 
     return data
   }
-
-  // const renderVegetableDrawer = (veg) =>{
-  //   const data = veg.map(element => {
-  //     return (
-  //       <VegetableDrawer
-  //       {...element}/>
-        
-  //     )
-  //   })
-  // }
 
   const getAllVeg = () => {
     axios.get ('/api/vegetables')
@@ -97,29 +85,15 @@ export default function Vegetables() {
           }
         >
           <div className="fontSize">
-            Read through the different vegetables and add them you your cart.
-            When you're ready click buildmygarden to get your personlized gardening plan.
+            Read through the vegetables and add them you your cart.
+            When you're ready, click buildmygarden to get a personlized gardening plan.
+            <br/>
+            Peppers indicate the growing difficulty
           </div>
         </Alert>
       </Collapse>
-      <Button
-        disabled={info}
-        variant="outlined"
-        onClick={() => {
-          setInfo(true);
-        }}
-      >
-        New here?
-      </Button>
     </div>
-      {/* <Grid 
-        // direction="row"
-        // justify="center"
-        container spacing={10}
-      > */}
         {renderVegetableCard(veg)}
-      {/* </Grid>  */}
-
       <VegetableDrawer 
       open = {open}
       handleDrawerOpen = {handleDrawerOpen}
