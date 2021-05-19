@@ -52,7 +52,7 @@ export default function NestedList() {
           <RoomIcon className="icon"/>
         </ListItemIcon>
         <ListItemText primary="My Plots" />
-        {open ? <ExpandLess /> : <ExpandMore />}
+        {open ? <ExpandMore /> : <ExpandLess />}
       </ListItem>
       {/* Map over plots to link all plots */}
       <Collapse in={!open} timeout="auto" unmountOnExit>

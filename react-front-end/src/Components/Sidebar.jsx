@@ -11,6 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import Avatar from "@material-ui/core/Avatar";
 import NestedList from "./Dropdown";
 import "./Sidebar.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -52,28 +53,40 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
   },
 
-  h1:{
+  h1: {
     display: "flex",
     paddingLeft: "10px",
     alignItems: "start",
     justifyContent: "space-around",
     color: "#b1d2db",
+    textDecoration: 'none',
     fontSize: "2em",
     fontWeight: "bold",
-
+    width: '100%',
+  },
+  colorTextBloom: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    color: "#b1d2db",
+    alignItems: 'center',
+  },
+  avatar: {
+    maxWidth: '60px',
+    maxHeight: '60px',
+    marginRight: '30px',
+    borderRadius: '30px',
+    border: '2px',
+    borderColor: '#b1d2db'
   },
   colorTextLogout: {
     display: 'flex',
-    maxWidth: '800px',
     flexGrow: '1',
     color: "#b1d2db",
     alignItems: 'center',
-  },
-  colorTextBloom: {
-    display: 'flexbox',
-    justifyContent: 'left',
-    color: "#b1d2db",
-    alignItems: 'center',
+    justifyContent: 'flex-end',
+    fontSize: '20px',
+    paddingTop: '8px',
+    paddingRight: '10px',
   },
   drawer: {
     width: drawerWidth,
@@ -167,11 +180,12 @@ export default function Sidebar() {
             <MenuIcon />
           </IconButton>
           <h1 className={classes.h1}>
-            <Link> to ='/home'<span className={classes.colorTextBloom}>Bloom</span>
+            <Link to='/home'>
+              <div className={classes.colorTextBloom}>Bloom</div>
             </Link>
-            <span className={classes.colorTextLogout}>Logout</span>
-            
-           
+            <div className={classes.colorTextLogout}>
+              <img className={classes.avatar} src={"../images/avatars/avatar.png"} alt='' />
+            Logout</div>
           </h1>
         </Toolbar>
       </AppBar>
@@ -191,7 +205,7 @@ export default function Sidebar() {
         <div className="toolbar">
           <h2 className={classes.toolbar}>
             {" "}
-            Welcome Bubba
+            Welcome, Bubba!
             <IconButton onClick={handleDrawerClose} className={classes.toolbar}>
               {theme.direction === "rtl" ? (
                 <ChevronRightIcon />
