@@ -17,10 +17,8 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     '& > * + *': {
       marginTop: theme.spacing(2),
+      fontSize: "20px",
     },
-  },
-  test: {
-      marginTop: '300px',
   },
 }));
 
@@ -28,8 +26,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Vegetables() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(false);
+  const [info, setInfo] = React.useState(true);
+
   const classes = useStyles();
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -77,11 +78,9 @@ export default function Vegetables() {
 
 
   return (
-    
-
-    <div className="info">
-       <div className={classes.alert}>
-      <Collapse in={open}>
+    <div className="box"> 
+    <div className={classes.alert}>
+      <Collapse in={info}>
         <Alert
           severity="info"
           action={
@@ -90,28 +89,29 @@ export default function Vegetables() {
               color="inherit"
               size="small"
               onClick={() => {
-                setOpen(false);
+                setInfo(false);
               }}
             >
               <CloseIcon fontSize="inherit" />
             </IconButton>
           }
         >
-          Close me!
+          <div className="fontSize">
+            Read through the different vegetables and add them you your cart.
+            When you're ready click buildmygarden to get your personlized gardening plan.
+          </div>
         </Alert>
       </Collapse>
       <Button
-        disabled={open}
+        disabled={info}
         variant="outlined"
         onClick={() => {
-          setOpen(true);
+          setInfo(true);
         }}
       >
-        Re-open
+        New here?
       </Button>
     </div>
-    
-    <div className="box"> 
       {/* <Grid 
         // direction="row"
         // justify="center"
@@ -120,13 +120,11 @@ export default function Vegetables() {
         {renderVegetableCard(veg)}
       {/* </Grid>  */}
 
-      {/* <VegetableDrawer 
+      <VegetableDrawer 
       open = {open}
       handleDrawerOpen = {handleDrawerOpen}
       handleDrawerClose = {handleDrawerClose}
-      /> */}
+      />
     </div>
-    </div>
-    
   )
 };
