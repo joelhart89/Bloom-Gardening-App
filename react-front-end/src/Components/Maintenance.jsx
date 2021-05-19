@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import useAppData from "../hooks/useAppData";
-import {  BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+import IconButton from '@material-ui/core/IconButton';
+import CheckCircleRoundedIcon from '@material-ui/icons/CheckCircleRounded';
+import CheckIcon from '@material-ui/icons/Check';
 import './Maintenance.scss';
-import Notifications from  './Notifications'
-const axios = require('axios');
+import Notifications from './Notifications';
+import 'moment';
 const moment = require('moment');
+const axios = require('axios');
+
 
 export default function Maintenance() {
   const [tasks, setTasks] = useState([]);
@@ -16,11 +21,11 @@ export default function Maintenance() {
   }, [state])
 
 
-  const task_date = function (day) {
-    const harvest_date = moment().add(day, 'days')
-    const counter = moment(harvest_date).fromNow();
-    return counter;
-    }
+  // const task_date = function (day) {
+  //   const harvest_date = moment().add(day, 'days')
+  //   const counter = moment(harvest_date).fromNow();
+  //   return counter;
+  //   }
 
   // builds the tasks for the plots. Used in Maintenance.jsx
   const buildTasks = function (tasks) {
@@ -33,10 +38,10 @@ export default function Maintenance() {
         let time = x.water_time
         let i = 1
         while (i < 10) {
-          let waterObj = {name: `Water ${name}`, time: time*i}
-          let fertilize = {name: 'Fertilize Garden', time: 10*i/2}
-          let weed = {name: "Weed Garden", time: 7*i}
-          if (i % 2 == 0 ) {
+          let waterObj = { name: `Water ${name}`, time: time * i }
+          let fertilize = { name: 'Fertilize Garden', time: 10 * i / 2 }
+          let weed = { name: "Weed Garden", time: 7 * i }
+          if (i % 2 == 0) {
             waterdays.push(fertilize)
           }
           waterdays.push(waterObj)
@@ -56,20 +61,20 @@ export default function Maintenance() {
     setTasks(newTasks);
   }
 
-const tasksToNotify = tasks.filter(task => task.time <= 3)
+  const tasksToNotify = tasks.filter(task => task.time <= 3)
 
   return (
     <main className="chore-card">
-      <Notifications tasks={tasksToNotify}
-        />
+      {/* <Notifications tasks={tasksToNotify}
+        /> */}
       <div className="chore-container">
-        <h2>Garden Chores</h2>
+        <div className="chore-hdr">Garden Chores</div>
         <table className="chore-instructions">
           <thead >
             <tr >
-              <th>Task</th>
-              <th>Date</th>
-              <th>Complete</th>
+              <th>TASK</th>
+              <th>DATE</th>
+              <th>DONE</th>
             </tr>
           </thead>
           <tbody >
@@ -82,10 +87,7 @@ const tasksToNotify = tasks.filter(task => task.time <= 3)
                   in {x.time} days
                 </td>
                 <td>
-                  <input
-                    type="checkbox"
-                    onClick={() => removeTask(x.name, x.time)}
-                  />
+                    <CheckCircleRoundedIcon className="done" onClick={() => removeTask(x.name, x.time)} />
                 </td>
               </tr>
             )}

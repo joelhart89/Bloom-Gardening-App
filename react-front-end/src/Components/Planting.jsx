@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useAppData from "../hooks/useAppData";
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+import CheckCircleRoundedIcon from '@material-ui/icons/CheckCircleRounded';
 import 'font-awesome/css/font-awesome.min.css';
 import './Planting.scss';
 
@@ -41,16 +40,16 @@ export default function Planting() {
   return (
     <main className="plant-card">
       <div className="plant-container">
-        <h2 className="plant-hdr">Planting Instructions</h2>
+        <div className="plant-hdr">Planting Instructions</div>
         <table className="plant-instructions">
           <thead >
             <tr >
               <th></th>
-              <th>Vegetable</th>
-              <th>Sunlight</th>
-              <th>Spacing</th>
-              <th>Depth</th>
-              <th>Completed</th>
+              <th>VEGETABLE</th>
+              <th>SUNLIGHT</th>
+              <th>SPACING</th>
+              <th>DEPTH</th>
+              <th>PLANTED</th>
             </tr>
           </thead>
 
@@ -77,13 +76,10 @@ export default function Planting() {
                   {x.depth}cm
                 </td>
                 <td>
-                  <input
-                    type="checkbox"
-                    {...isPlanted(x.planted_date) ? "checked" : "unchecked"}
-                    onClick={() => {
-                      markComplete(plants[i]);
-                      plant(x.id);
-                    }}
+                  <CheckCircleRoundedIcon className="done" onClick={() => {
+                    markComplete(plants[i]);
+                    plant(x.id);
+                  }}
                   />
                 </td>
               </tr>

@@ -1,0 +1,31 @@
+
+.items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.basketRows {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.td {
+  display: flex;
+  justify-content: flex-start;
+  width: 50px;
+}
+
+.vegheader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 25px;
+}
+
+table {
+  margin-top: 15px;
+}

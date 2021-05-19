@@ -51,12 +51,12 @@ export default function Harvest() {
   return (
     <main className="harvest-card">
       <div className="harvest-container">
-        <h2>Harvesting Schedule</h2>
+        <div className="harvest-hdr">Harvesting Schedule</div>
         <table className="harvest-schedule">
           <thead >
             <tr >
               <th></th>
-              <th>Progress</th>
+              <th>PROGRESS</th>
               <th></th>
             </tr>
           </thead>

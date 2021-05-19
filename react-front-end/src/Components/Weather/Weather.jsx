@@ -35,6 +35,7 @@ export default function Weather() {
       if (day.temp.min <= 273.15) frost++;
       if (day.temp.max >= 305.37) heat++;
       if (day.rain) rain = rain + day.rain;
+      console.log(day.rain);
     }
     
     let alert1;
@@ -50,12 +51,13 @@ export default function Weather() {
     if (rain > 13) {
       alert3 = <div className="alert-rain"><span>warning: </span>More than 13mm of rain expected.</div>;
     }
+    console.log("rain:", rain);
     return (<div>{alert1}{alert2}{alert3}</div>);
   }
   
   return (
     <main>
-      <Card className="root">
+      <Card className="weather-card">
         <section>
           <h2>Vancouver, CA</h2>
           <div>{getAlerts()}</div>

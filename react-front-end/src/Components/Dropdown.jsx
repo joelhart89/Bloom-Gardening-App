@@ -39,7 +39,7 @@ export default function NestedList() {
       //   </ListSubheader>
       // }
     >
-      <NavLink className="a" to="/planning">
+      <NavLink className="a" to="/build">
         <ListItem button>
           <ListItemIcon>
             <AddIcon className="icon"/>

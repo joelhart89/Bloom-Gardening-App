@@ -47,7 +47,7 @@ export default function App() {
               </div>
             </div>
           </Route>
-          <Route path="/planning">
+          <Route path="/build">
             <Vegetables />
             <VegetableDrawer />
           </Route>
