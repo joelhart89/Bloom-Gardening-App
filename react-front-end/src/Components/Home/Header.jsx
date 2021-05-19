@@ -13,14 +13,12 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     fontFamily: 'Nunito',
   },
- headerBar: {
-    background: 'none',
-  },
+
  headerBarWrapper: {
     width: '80%',
     margin: '0 auto',
   },
- headerBarTitle: {
+  headerBarTitle: {
     flexGrow: '1',
   },
   icon: {

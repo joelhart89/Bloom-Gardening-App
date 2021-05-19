@@ -1,0 +1,13 @@
+{
+  "search.exclude": {
+    "./react-front-end/node_modules": true,
+    "**/node_modules": false
+  },
+  "files.watcherExclude": {
+    "./react-front-end/node_modules": true,
+    "**/node_modules/**": false
+  },
+  "files.exclude": {
+    "./react-front-end/node_modules": true
+  }
+}

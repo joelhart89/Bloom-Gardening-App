@@ -13,6 +13,7 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NestedList from "./Dropdown";
 import "./Sidebar.scss";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const drawerWidth = 300;
 
@@ -50,8 +51,25 @@ const useStyles = makeStyles((theme) => ({
   hide: {
     display: "none",
   },
-  colorText: {
+
+  h1:{
+    display:'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+
+  },
+  colorTextLogout: {
+    display: 'flex',
+    maxWidth: '800px',
+    flexGrow: '1',
     color: "#b1d2db",
+    alignItems: 'center',
+  },
+  colorTextBloom: {
+    display: 'flexbox',
+    justifyContent: 'left',
+    color: "#b1d2db",
+    alignItems: 'center',
   },
   drawer: {
     width: drawerWidth,
@@ -79,9 +97,14 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 2),
+    paddingLeft: "10px",
+    alignItems: "start",
+    justifyContent: "space-around",
+    color: "#b1d2db",
+    fontSize: "2em",
+    fontWeight: "bold",
+
+    padding: theme.spacing(-1, 4),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
@@ -139,8 +162,11 @@ export default function Sidebar() {
           >
             <MenuIcon />
           </IconButton>
-          <h1 className={classes.appbarTitle}>
-            <span className={classes.colorText}>Bloom.</span>
+          <h1 className={classes.h1}>
+            <Link> to="/Home"<span className={classes.colorTextBloom}>Bloom</span>
+            <span className={classes.colorTextLogout}>Logout</span> </Link>
+            
+
           </h1>
         </Toolbar>
       </AppBar>
@@ -158,15 +184,17 @@ export default function Sidebar() {
         }}
       >
         <div className="toolbar">
-          <h2 className={classes.colorText}> Dashboard </h2>
-
-          <IconButton onClick={handleDrawerClose}className={classes.colorText}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
-          </IconButton>
+          <h2 className={classes.toolbar}>
+            {" "}
+            Welcome Bubba
+            <IconButton onClick={handleDrawerClose} className={classes.toolbar}>
+              {theme.direction === "rtl" ? (
+                <ChevronRightIcon />
+              ) : (
+                <ChevronLeftIcon />
+              )}
+            </IconButton>
+          </h2>
         </div>
 
         <NestedList />

@@ -10,7 +10,7 @@ import styled from 'styled-components';
   bottom: 0;
   width: 100%;
   @media (max-width: 1000px) {
-    padding: 40px 10px;
+    padding: 30px 10px;
   }
 `;
    
@@ -58,7 +58,7 @@ const Row = styled.div`
  const Heading = styled.p`
   font-size: 22px;
   color: #b1d2db;
-  margin-top: 0px;
+  margin-top: 20px;
   margin-bottom:15px;
   font-weight: bold;
 `;
@@ -67,7 +67,8 @@ const Footer = () => {
   return (
     <Box>
       <h1 style={{ color: "#b1d2db", 
-                   textAlign: "center", 
+                   textAlign: "center",
+                   paddingTop: '20px', 
                    marginTop: "-200px" }}>
         Bloom: A beginners guide to growing your own produce!
       </h1>

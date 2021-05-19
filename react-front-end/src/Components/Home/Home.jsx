@@ -1,37 +1,38 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { CssBaseline } from '@material-ui/core';
-import Header from './Header';
-import Footer from './Footer';
-import Pictures from './Pictures';
-
-
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { CssBaseline } from "@material-ui/core";
+import Header from "./Header";
+import Footer from "./Footer";
+import Pictures from "./Pictures";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: 'relative',
-    minHeight: '250vh',
-    backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/cabbage.jpg'})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    position: "relative",
+    minHeight: "310vh",
+    backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/cabbage.jpg"})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
   },
-  
-  // footer:{ doesnt work with div or without etc. 
+
+  // footer:{ doesnt work with div or without etc.
   //   marginTop: '1000px',
-  //   backgroundColor: 'blue', 
+  //   backgroundColor: 'blue',
 
   // }
 }));
 
-  export default function Home() {
-    const classes = useStyles();
-    return (
-      <div className={classes.root}>
+export default function Home() {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
       <CssBaseline />
-       <Header />
+      <Header />
       <Pictures />
-       </div>
-    
+      <div>
 
-    );
-  }
+   
+      </div>
+    </div>
+    
+  );
+}
