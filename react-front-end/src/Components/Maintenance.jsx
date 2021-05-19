@@ -56,7 +56,7 @@ export default function Maintenance() {
     setTasks(newTasks);
   }
 
-  const tasksToNotify = tasks.filter(task => task.time <= 3)
+  const tasksToNotify = tasks.filter(task => task.time <= 1)
 
   return (
     <main className="chore-card">
