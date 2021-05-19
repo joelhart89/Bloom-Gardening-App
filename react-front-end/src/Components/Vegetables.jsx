@@ -4,13 +4,32 @@ import VegetableCard from './VegetableCard';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import VegetableDrawer from './VegetableDrawer'
+import Alert from '@material-ui/lab/Alert';
+import IconButton from '@material-ui/core/IconButton';
+import Collapse from '@material-ui/core/Collapse';
+import Button from '@material-ui/core/Button';
+import CloseIcon from '@material-ui/icons/Close';
 import './Vegetables.scss';
+
+
+const useStyles = makeStyles((theme) => ({
+  alert: {
+    width: '100%',
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
+  },
+  test: {
+      marginTop: '300px',
+  },
+}));
 
 
 
 
 export default function Vegetables() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(true);
+  const classes = useStyles();
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -58,6 +77,40 @@ export default function Vegetables() {
 
 
   return (
+    
+
+    <div className="info">
+       <div className={classes.alert}>
+      <Collapse in={open}>
+        <Alert
+          severity="info"
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+        >
+          Close me!
+        </Alert>
+      </Collapse>
+      <Button
+        disabled={open}
+        variant="outlined"
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Re-open
+      </Button>
+    </div>
+    
     <div className="box"> 
       {/* <Grid 
         // direction="row"
@@ -67,11 +120,12 @@ export default function Vegetables() {
         {renderVegetableCard(veg)}
       {/* </Grid>  */}
 
-      <VegetableDrawer 
+      {/* <VegetableDrawer 
       open = {open}
       handleDrawerOpen = {handleDrawerOpen}
       handleDrawerClose = {handleDrawerClose}
-      />
+      /> */}
+    </div>
     </div>
     
   )
