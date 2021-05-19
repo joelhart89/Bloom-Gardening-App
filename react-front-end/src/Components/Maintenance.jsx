@@ -11,6 +11,7 @@ export default function Maintenance() {
   const [tasks, setTasks] = useState([]);
   const { state } = useAppData();
   const { id } = useParams();
+  const today     = moment();
 
   useEffect(() => {
     buildTasks(state.maintenance)
@@ -37,15 +38,20 @@ export default function Maintenance() {
           waterdays.push(weed)
           i++;
         }
+        if (name === "Cauliflower") {
+          waterdays.push({ name: `Water Cauliflower`, time: 0 })
+        }
+        if (name === "Potatoes") {
+          waterdays.push({ name: `Water Potatoes`, time: 0 })
+        } 
       })
-
       const sorted = waterdays.sort((a, b) => (a.time > b.time) ? 1 : -1);
       setTasks(sorted)
     }
   }
   
   const task_date = function (day) {
-    const harvest_date = moment().add(day, 'days')
+    const harvest_date = moment().add(day, 'days').endOf('day')
     const counter = moment(harvest_date).fromNow();
     return counter;
   }
