@@ -8,7 +8,6 @@ import './Maintenance.scss';
 import Notifications from './Notifications';
 import 'moment';
 const moment = require('moment');
-
 const axios = require('axios');
 
 

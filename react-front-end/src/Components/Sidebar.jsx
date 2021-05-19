@@ -11,8 +11,10 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import Avatar from "@material-ui/core/Avatar";
 import NestedList from "./Dropdown";
 import "./Sidebar.scss";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const drawerWidth = 300;
 
@@ -50,8 +52,41 @@ const useStyles = makeStyles((theme) => ({
   hide: {
     display: "none",
   },
-  colorText: {
+
+  h1: {
+    display: "flex",
+    paddingLeft: "10px",
+    alignItems: "start",
+    justifyContent: "space-around",
     color: "#b1d2db",
+    textDecoration: 'none',
+    fontSize: "2em",
+    fontWeight: "bold",
+    width: '100%',
+  },
+  colorTextBloom: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    color: "#b1d2db",
+    alignItems: 'center',
+  },
+  avatar: {
+    maxWidth: '60px',
+    maxHeight: '60px',
+    marginRight: '30px',
+    borderRadius: '30px',
+    border: '2px',
+    borderColor: '#b1d2db'
+  },
+  colorTextLogout: {
+    display: 'flex',
+    flexGrow: '1',
+    color: "#b1d2db",
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    fontSize: '20px',
+    paddingTop: '8px',
+    paddingRight: '10px',
   },
   drawer: {
     width: drawerWidth,
@@ -79,9 +114,14 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 2),
+    paddingLeft: "10px",
+    alignItems: "start",
+    justifyContent: "space-around",
+    color: "#b1d2db",
+    fontSize: "2em",
+    fontWeight: "bold",
+
+    padding: theme.spacing(-1, 4),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
@@ -139,8 +179,13 @@ export default function Sidebar() {
           >
             <MenuIcon />
           </IconButton>
-          <h1 className={classes.appbarTitle}>
-            <span className={classes.colorText}>Bloom.</span>
+          <h1 className={classes.h1}>
+            <Link to='/home'>
+              <div className={classes.colorTextBloom}>Bloom</div>
+            </Link>
+            <div className={classes.colorTextLogout}>
+              <img className={classes.avatar} src={"../images/avatars/avatar.png"} alt='' />
+            Logout</div>
           </h1>
         </Toolbar>
       </AppBar>
@@ -158,15 +203,17 @@ export default function Sidebar() {
         }}
       >
         <div className="toolbar">
-          <h2 className={classes.colorText}> Dashboard </h2>
-
-          <IconButton onClick={handleDrawerClose}className={classes.colorText}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
-          </IconButton>
+          <h2 className={classes.toolbar}>
+            {" "}
+            Welcome, Bubba!
+            <IconButton onClick={handleDrawerClose} className={classes.toolbar}>
+              {theme.direction === "rtl" ? (
+                <ChevronRightIcon />
+              ) : (
+                <ChevronLeftIcon />
+              )}
+            </IconButton>
+          </h2>
         </div>
 
         <NestedList />
