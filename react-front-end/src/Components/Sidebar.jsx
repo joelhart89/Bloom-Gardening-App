@@ -53,9 +53,13 @@ const useStyles = makeStyles((theme) => ({
   },
 
   h1:{
-    display:'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around',
+    display: "flex",
+    paddingLeft: "10px",
+    alignItems: "start",
+    justifyContent: "space-around",
+    color: "#b1d2db",
+    fontSize: "2em",
+    fontWeight: "bold",
 
   },
   colorTextLogout: {
@@ -163,10 +167,11 @@ export default function Sidebar() {
             <MenuIcon />
           </IconButton>
           <h1 className={classes.h1}>
-            <Link> to="/Home"<span className={classes.colorTextBloom}>Bloom</span>
-            <span className={classes.colorTextLogout}>Logout</span> </Link>
+            <Link> to ='/home'<span className={classes.colorTextBloom}>Bloom</span>
+            </Link>
+            <span className={classes.colorTextLogout}>Logout</span>
             
-
+           
           </h1>
         </Toolbar>
       </AppBar>
