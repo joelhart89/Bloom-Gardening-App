@@ -4,7 +4,7 @@ import useAppData from "../hooks/useAppData";
 import './VegetableCard.scss';
 
 export default function VegetableCard(props) {
-  const { state, addVegToCart } = useAppData();
+  const { addVegToCart } = useAppData();
 
   const onClick = function () {
     addVegToCart(props).then(() => {

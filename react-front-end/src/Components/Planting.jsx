@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useAppData from "../hooks/useAppData";
-import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import CheckCircleRoundedIcon from '@material-ui/icons/CheckCircleRounded';
 import 'font-awesome/css/font-awesome.min.css';
 import './Planting.scss';
@@ -31,11 +31,6 @@ export default function Planting() {
     return (plant ? true : false)
   }
 
-  // const removePlanting = function (name) {
-  //   const found = plants.find(task => task.name === name );
-  //   const newPlants = plants.filter(task => task !== found);
-  //   setPlants(newPlants);
-  // }
 
   return (
     <main className="plant-card">

@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React,  {useEffect} from 'react';
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import useAppData from "../hooks/useAppData";
 import './VegetableDrawer.scss';
 
@@ -110,15 +106,15 @@ const useStyles = makeStyles((theme) => ({
 export default function VegetableDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const { state, deleteVegFromCart, buildVegGarden, addPlot } = useAppData()
+  const { state, deleteVegFromCart, addPlot } = useAppData()
 
   useEffect(() => {
   }, [state])
 
   const { open,
-    handleDrawerOpen,
+    // handleDrawerOpen,
     handleDrawerClose,
-    veg } = props
+   } = props
 
   const buildOnClick = function (cart) {
     addPlot(cart)

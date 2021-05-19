@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
 import Header from "./Header";
-import Footer from "./Footer";
 import Pictures from "./Pictures";
 
 const useStyles = makeStyles((theme) => ({
@@ -13,12 +12,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
   },
-
-  // footer:{ doesnt work with div or without etc.
-  //   marginTop: '1000px',
-  //   backgroundColor: 'blue',
-
-  // }
 }));
 
 export default function Home() {
@@ -28,11 +21,7 @@ export default function Home() {
       <CssBaseline />
       <Header />
       <Pictures />
-      <div>
-
-   
-      </div>
+      <div></div>
     </div>
-    
   );
 }
