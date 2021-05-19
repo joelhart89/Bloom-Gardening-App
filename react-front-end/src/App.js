@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
 import Sidebar from './Components/Sidebar';
 import { makeStyles } from '@material-ui/core/styles';
 import VegetableAbout from './Components/Vegetable/VegetableAbout';

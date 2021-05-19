@@ -24,16 +24,6 @@ router.get('/api/cart/', (req, res) => {
   })
 });
 
-//get specific veggie to see if its rendering data correctly and to delete the veggie
-
-//  db.query(`SELECT * FROM veg_baskets WHERE id = $1::integer`, [req.params.id])
-//   request.
-//     .then(res => {
-//       return res.rows
-//     })
-//     .catch(err => console.log(err))
-// }
-
 router.delete('/api/cart/:id', (req,res) => {
   const veg_basketID = req.params.id
   db.query(`DELETE FROM veg_baskets WHERE id = $1::integer`, [veg_basketID]) 
@@ -60,24 +50,8 @@ router.post('/api/cart', (req, res) => {
   }
 })
 
-
 router.delete("/api/cart/delete/:id", (req, res) => {
   db.query(`DELETE FROM veg_baskets`)
 });
-
-
-
-// const buildGarden = function () {
-
-//   return dbquery(`INSERT into from veg_baskets`)
-// }
-
-
-// router.get('/api/cart', (req, res) => {
-//   getCart().then(data => {
-//     res.json(data)
-//   })
-// });
-
 
 module.exports = router

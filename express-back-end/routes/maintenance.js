@@ -45,24 +45,6 @@ router.delete('/api/plots_vegs/:id', (req,res) => {
   .catch(err => console.log("error!", err))
 })
 
-// router.post('/api/plots_vegs/:id', (req, res) => {
-//   const user_id = 1
-//   const vegetable_id = req.body.vegetableID 
-//   const plot_id = req.body.plotID
-//   console.log('this is happening isntead')
-//     try {
-//       db.query(`INSERT INTO plots_vegs(user_id, vegetable_id, plot_id)
-//       VALUES ($1, $2 ,$3) RETURNING *` ,[user_id, vegetable_id, plot_id])
-//       .then(data => {
-//         res.status(200).json(data.rows)
-//       })
-//       .catch(err => console.log("error!", err))
-//     } 
-//     catch(e) {
-//       console.error("error: ", e)
-//     }
-// });
-
 router.post('/api/plots', (req, res) => {
   const user_id = 1
   const dimensions_length = 100
@@ -124,7 +106,5 @@ const getPlantedVeg = function (req, res) {
     })
     .catch(err => console.log(err));
 };
-
-
 
 module.exports = router;

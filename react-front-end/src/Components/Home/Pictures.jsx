@@ -1,10 +1,11 @@
+
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ImageCard from "./ImageCard";
 import places from "./hero";
 import useWindowPosition from "../../hooks/useWindowPosition";
 import './Pictures.scss';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   div1: {
