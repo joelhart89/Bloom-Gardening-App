@@ -62,10 +62,14 @@ const useStyles = makeStyles((theme) => ({
     padding: '10px',
   },
   buildGardenButton: {
-    marginTop: 25,
+    // marginTop: 10,
+    display: "flex",
+    justifyContent: "center",
+    marginLeft: '22%',
     marginBottom: -100,
     borderLeft: 150,
     borderRight: 150,
+    width: '175px',
   },
   vegcontent: {
     flexGrow: 1,

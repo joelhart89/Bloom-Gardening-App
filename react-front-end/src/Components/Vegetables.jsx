@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import VegetableCard from './VegetableCard';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Grid from "@material-ui/core/Grid";
+import { makeStyles } from '@material-ui/core/styles';
 import VegetableDrawer from './VegetableDrawer'
 import Alert from '@material-ui/lab/Alert';
 import IconButton from '@material-ui/core/IconButton';
@@ -83,10 +82,10 @@ export default function Vegetables() {
           }
         >
           <div className="fontSize">
-            Read through the vegetables and add them you your cart.
-            When you're ready, click buildmygarden to get a personlized gardening plan.
+            Read through the vegetables and add them your basket.
+            When you're ready, click Build My Garden to get a personlized gardening plan.
             <br/>
-            Peppers indicate the growing difficulty
+            Peppers indicate the growing difficulty.
           </div>
         </Alert>
       </Collapse>
