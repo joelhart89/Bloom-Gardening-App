@@ -39,22 +39,22 @@ export default function NestedList() {
       //   </ListSubheader>
       // }
     >
-      <NavLink className="a" to="/build">
+      <Link className="a" to="/build">
         <ListItem button>
           <ListItemIcon>
             <AddIcon className="icon"/>
           </ListItemIcon>
-            <ListItemText primary="Build New Plot" />
+            <ListItemText primary="Build New Garden" />
           </ListItem>
-        </NavLink>
+        </Link>
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
           <RoomIcon className="icon"/>
         </ListItemIcon>
-        <ListItemText primary="My Plots" />
+        <ListItemText primary="My Gardens" />
         {open ? <ExpandMore /> : <ExpandLess />}
       </ListItem>
-      {/* Map over plots to link all plots */}
+      {/* Map over Gardens to link all Gardens */}
       <Collapse in={!open} timeout="auto" unmountOnExit>
         {state.plots.map(x => 
         <List component="div" disablePadding>
