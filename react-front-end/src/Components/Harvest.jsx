@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import useAppData from "../hooks/useAppData";
-import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import './Harvest.scss';
 const moment = require('moment');
-const axios = require('axios');
 
 const getProgress = function (dtePlanted, daysToHarvest) {
   let planted = moment(dtePlanted);
@@ -18,7 +17,7 @@ const getProgress = function (dtePlanted, daysToHarvest) {
 
 export default function Harvest() {
   const { id } = useParams();
-  const { state, setState, markComplete } = useAppData();
+  const { state } = useAppData();
   const [myHarvest, setMyHarvest] = useState([]);
 
   useEffect(() => {
@@ -29,24 +28,6 @@ export default function Harvest() {
     const myInfo = state.harvest.filter(plant => plant.plot_id === parseInt(id) && plant.planted_date !== null);
     setMyHarvest(myInfo)
   }
-
-  // const removeHarvest = function (plotVegID, name) {
-  //   return axios.delete(`/api/plots_vegs/${plotVegID}`)
-  //   .then(res => {
-  //     const found = myHarvest.find(harvest => harvest.name === name);
-  //     const newHarvest = myHarvest.filter(harvest => harvest !== found);
-  //     setMyHarvest(newHarvest)
-  //   })
-  //   .catch(err => console.log(err));
-  // }
-
-  // const harvest_date = function (planted, harvest) {
-  // const harvest_date = moment(planted).add(harvest, 'days')
-  // const counter = moment(harvest_date).fromNow();
-  // return counter;
-  // }
-
-  // const myHarvest = state.harvest.filter(plant => plant.plot_id === parseInt(id) && plant.planted_date !== null);
 
   return (
     <main className="harvest-card">

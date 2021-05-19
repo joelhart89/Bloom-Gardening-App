@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import VegetableCard from './VegetableCard';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from "@material-ui/core/Grid";
+// import { makeStyles } from '@material-ui/core/styles';
+// import Grid from "@material-ui/core/Grid";
 import VegetableDrawer from './VegetableDrawer'
 import './Vegetables.scss';
 
@@ -35,15 +35,6 @@ export default function Vegetables() {
     return data
   }
 
-  // const renderVegetableDrawer = (veg) =>{
-  //   const data = veg.map(element => {
-  //     return (
-  //       <VegetableDrawer
-  //       {...element}/>
-        
-  //     )
-  //   })
-  // }
 
   const getAllVeg = () => {
     axios.get ('/api/vegetables')

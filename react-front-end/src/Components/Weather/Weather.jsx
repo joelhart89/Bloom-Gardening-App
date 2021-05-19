@@ -7,9 +7,7 @@ import { useState, useEffect } from "react";
 
 const lat = 49.2497;
 const lon = -123.1193;
-// const cityId = 6173331;
 const apiKey = 'f2970ccf10fb5df7afd096a5f96ab733';
-// const weatherUrl = `http://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=${apiKey}`;
 const weatherUrlCF = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={hourly}&appid=${apiKey}`
 
 export default function Weather() {
@@ -26,7 +24,7 @@ export default function Weather() {
   }, [])
 
   const getAlerts = function () {
-    let alerts = '';
+    // let alerts = '';
     let frost = 0;
     let heat = 0;
     let rain = 0;
@@ -35,7 +33,7 @@ export default function Weather() {
       if (day.temp.min <= 273.15) frost++;
       if (day.temp.max >= 305.37) heat++;
       if (day.rain) rain = rain + day.rain;
-      console.log(day.rain);
+      // console.log(day.rain);
     }
     
     let alert1;
@@ -51,7 +49,7 @@ export default function Weather() {
     if (rain > 13) {
       alert3 = <div className="alert-rain"><span>warning: </span>More than 13mm of rain expected.</div>;
     }
-    console.log("rain:", rain);
+    // console.log("rain:", rain);
     return (<div>{alert1}{alert2}{alert3}</div>);
   }
   
