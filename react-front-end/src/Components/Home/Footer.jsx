@@ -50,7 +50,7 @@ const Row = styled.div`
   text-decoration: none;
    
   &:hover {
-      color: #007261;
+      color: #007621;;
       transition: 200ms ease-in;
   }
 `;

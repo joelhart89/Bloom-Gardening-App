@@ -1,9 +1,18 @@
+// .body1{
+//   width: 100%;
+//   max-width: 360px;
+//   background-color: #202020;
+//   color: #b1d2db;
+//   font-weight: bold;
+//   height: 100%;
+// }
+
 .main {
   width: 100%;
   max-width: 360px;
   background-color: #202020;
   color: #b1d2db;
-  font-weight: bold;
+  // font-weight: bold;
   height: 100%;
 }
 .nested {
@@ -14,11 +23,37 @@
 .icon {
   color: #b1d2db;
 }
+.iconb{
+  color: #b1d2db;
+  margin-left: 3em;
+  margin-right: .5em;
+}
 .a {
   color:#b1d2db;
-  font-weight: bold;
+  // font-weight: bold;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 22px;
+}
+.a :hover {
+  color:#007621;
+  // font-weight: bold;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.b {
+  color:#b1d2db;
+  // font-weight: bold;
+  text-decoration: none;
+  font-size: 22px;
+  margin-left: 5em;
+}
+.b :hover {
+  color:#007621;
+  // font-weight: bold;
+  text-decoration: none;
+  font-size: 22px;
+  margin-left: 5em;
 }
 
 .toolbar {
