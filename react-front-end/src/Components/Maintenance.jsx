@@ -6,6 +6,8 @@ import CheckCircleRoundedIcon from '@material-ui/icons/CheckCircleRounded';
 import CheckIcon from '@material-ui/icons/Check';
 import './Maintenance.scss';
 import Notifications from './Notifications';
+import Alert from '@material-ui/lab/Alert';
+
 import 'moment';
 const moment = require('moment');
 const axios = require('axios');
