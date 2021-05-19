@@ -1,20 +1,16 @@
 import React from 'react';
 import { Link, NavLink } from "react-router-dom";
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-import Divider from '@material-ui/core/Divider';
+import {List, ListItem, ListItemIcon,ListItemText,Collapse, Divider} from '@material-ui/core';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-
+import AssistantIcon from '@material-ui/icons/Assistant';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+import InfoIcon from '@material-ui/icons/Info';
 import EcoIcon from '@material-ui/icons/Eco';
-import BuildIcon from '@material-ui/icons/Build';
-import AddIcon from '@material-ui/icons/Add';
-import RoomIcon from '@material-ui/icons/Room';
 import SettingsIcon from '@material-ui/icons/Settings'
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import useAppData from "../hooks/useAppData";
+import GrainIcon from '@material-ui/icons/Grain';
 import './Dropdown.scss';
 
 export default function NestedList() {
@@ -42,16 +38,16 @@ export default function NestedList() {
       <Link className="a" to="/build">
         <ListItem button>
           <ListItemIcon>
-            <AddIcon className="icon"/>
+            <AddBoxIcon className="icon"/>
           </ListItemIcon>
-            <ListItemText primary="Build New Garden" />
+            <div className ='a'> Build New Garden </div>
           </ListItem>
         </Link>
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
-          <RoomIcon className="icon"/>
+          <MoreVertIcon className="icon"/>
         </ListItemIcon>
-        <ListItemText primary="My Gardens" />
+        <div className ='a'> Bubba's Garden </div>
         {open ? <ExpandMore /> : <ExpandLess />}
       </ListItem>
       {/* Map over Gardens to link all Gardens */}
@@ -60,9 +56,9 @@ export default function NestedList() {
         <List component="div" disablePadding>
           <ListItem button onClick={() => redirect(x.id)}  className="nested">
             <ListItemIcon>
-
+            <GrainIcon className="iconb"/>
             </ListItemIcon>
-              <ListItemText primary={`Plot ${x.id}`} />
+              <ListItemText primary={`Garden ${x.id}`} />
           </ListItem>
         </List>
         )}
@@ -73,7 +69,7 @@ export default function NestedList() {
           <ListItemIcon>
             <EcoIcon className="icon"/>
           </ListItemIcon>
-          <ListItemText primary="Vegetables" />
+          <div className='a'> Vegetables </div>
         </ListItem> 
         </Link>
       <Divider />
@@ -81,17 +77,17 @@ export default function NestedList() {
       <Link to="/vegetables"className='a'>
         <ListItem button>
           <ListItemIcon>
-            <EcoIcon className="icon"/>
+            <InfoIcon className="icon"/>
           </ListItemIcon>
-            <ListItemText primary="About" />
+          <div className='a'> About </div>
         </ListItem>
       </Link>
       <Link to="/vegetables"className='a'>
         <ListItem button>
           <ListItemIcon>
-            <BuildIcon className="icon"/>
+            <AssistantIcon className="icon"/>
           </ListItemIcon>
-            <ListItemText primary="Resources" />
+          <div className='a'> Resources </div>
         </ListItem>
       </Link>
       <Link to="/vegetables"className='a'>
@@ -99,7 +95,7 @@ export default function NestedList() {
           <ListItemIcon>
             <SettingsIcon className="icon"/>
           </ListItemIcon>
-            <ListItemText primary="Settings" />
+          <div className='a'> Settings </div>
         </ListItem>
       </Link>
     </List>
