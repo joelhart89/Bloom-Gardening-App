@@ -21,7 +21,6 @@ export default function Maintenance() {
   const buildTasks = function (tasks) {
     const waterdays = []
     const myTasks = tasks.filter(plant => plant.plot_id === parseInt(id) && plant.planted_date !== null);
-    // let t = 1
     if (myTasks.length > 0) {
       myTasks.map(x => {
         let name = x.name
@@ -29,15 +28,10 @@ export default function Maintenance() {
         let i = 1
         while (i < 10) {
           let waterObj = { name: `Water ${name}`, time: time * i }
-          let fertilize = { name: 'Fertilize Garden', time: 10 * i / 2 }
-          let weed = { name: "Weed Garden", time: 7 * i }
-          if (i % 2 === 0) {
-            waterdays.push(fertilize)
-          }
           waterdays.push(waterObj)
-          waterdays.push(weed)
           i++;
         }
+
         if (name === "Cauliflower") {
           waterdays.push({ name: `Water Cauliflower`, time: 0 })
         }
@@ -45,6 +39,13 @@ export default function Maintenance() {
           waterdays.push({ name: `Water Potatoes`, time: 0 })
         } 
       })
+      let t = 1;
+      while (t < 5) {
+        let weed = { name: "Weed Garden", time: 7 * t }
+        let fertilize = { name: 'Fertilize Garden', time: 10 * t }
+        waterdays.push(fertilize, weed)
+        t++;
+      }
       const sorted = waterdays.sort((a, b) => (a.time > b.time) ? 1 : -1);
       setTasks(sorted)
     }
