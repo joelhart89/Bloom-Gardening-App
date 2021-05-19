@@ -60,8 +60,8 @@ export default function Maintenance() {
 
   return (
     <main className="chore-card">
-      <Notifications tasks={tasksToNotify}
-        />
+      {/* <Notifications tasks={tasksToNotify}
+        /> */}
       <div className="chore-container">
         <div className="chore-hdr">Garden Chores</div>
         <table className="chore-instructions">
@@ -82,7 +82,7 @@ export default function Maintenance() {
                   {task_date(x.time)}
                 </td>
                 <td>
-                    <CheckCircleRoundedIcon className="done" onClick={() => removeTask(x.name, x.time)} />
+                    <CheckCircleRoundedIcon className="chore-done" onClick={() => removeTask(x.name, x.time)} />
                 </td>
               </tr>
             )}
