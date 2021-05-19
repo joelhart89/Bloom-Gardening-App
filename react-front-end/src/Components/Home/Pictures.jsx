@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ImageCard from "./ImageCard";
 import places from "./hero";
 import useWindowPosition from "../../hooks/useWindowPosition";
-import './Pictures.scss'
+import './Pictures.scss';
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
