@@ -1,8 +1,8 @@
-
 .plant-card {
-  width: 80%;
-  height: 300px;
-  margin-left: 7%;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  margin-top: 5%;
   display: flex;
   flex-direction: row;
   overflow: auto;
@@ -17,8 +17,11 @@
   padding-bottom: 10px;
 }
 
-h2 {
+.plant-hdr {
+  font-size: 20px;
+  font-weight: bold;
   color: #1c4a47;
+  padding-top: 15px;
 }
 
 .avatar {
@@ -26,9 +29,15 @@ h2 {
   height: auto;
 }
 
+.done {
+  color: lightgrey;
+  :hover {
+    color: #007261;
+  }
+}
+
 .strike {
   background-color: rgba(221, 221, 221, 0.842);
-  text-decoration: line-through;
   opacity: 40%;
 }
 

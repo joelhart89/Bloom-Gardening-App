@@ -5,7 +5,6 @@ import Maintenance from "./Maintenance";
 import Harvest from "./Harvest";
 import Weather from "./Weather/Weather";
 
-
 const useStyles = makeStyles({
   column: {
     display: 'flex',
@@ -14,25 +13,23 @@ const useStyles = makeStyles({
   row: {
     display: 'flex',
     flexDirection: 'row',
-    // justifyContent: 'space-between'
   },
 });
-
-
 
 export default function Dashboard() {
   const classes = useStyles();
 
-
   return (
     <main className={classes.column}>
-        <Planting />
-      <section className={classes.row}>
-        <Maintenance />
-        <Harvest />
-      </section>
       <section>
         <Weather />
+      </section>
+      <section className={classes.row}>
+        <section className={classes.column}>
+          <Planting />
+          <Harvest />
+        </section>
+        <Maintenance />
       </section>
     </main>
   )
