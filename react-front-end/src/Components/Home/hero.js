@@ -3,7 +3,7 @@ const places = [
   {
     title: "Why Bloom",
     description:
-      "Starting your first garden can be overwhelming... What plants should I choose? When should I water? Bloom answers these questions for you, providing you with the knowledge and tools to know what plants to choose and how to care for them. ",
+      "Starting your first garden can be overwhelming... What plants should I choose? How often should I water? Bloom answers all of these questions for you, providing you with the knowledge and tools to know what plants to choose and how to care for them. ",
     imageUrl: process.env.PUBLIC_URL + '/assets/userStories.jpg',
     time: 1000,
   },
@@ -24,7 +24,7 @@ const places = [
   {
     title: "Get Started?",
     description:
-      "Can't wait? Click the link below to start learning about fruits and vegetables. We will send you to our planning page so you can pick produce that fits your needs.Click build your garden and we will provide your own personal garden plan. ",
+      "Can't wait to get going? Click the link below to start learning about fruits and vegetables. We will send you to our planning page so you can pick produce that fits your needs.Click build your garden and we will provide your own personal garden plan. ",
     imageUrl: process.env.PUBLIC_URL + 'assets/getStarted1.jpg',
     time: 4000,
   },

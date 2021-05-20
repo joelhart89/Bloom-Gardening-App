@@ -47,7 +47,7 @@ export default function Weather() {
       alert2 = <div className="alert-heat"><span>warning: </span>High Heat Warning. Early morning watering recommended.</div>;
     }
     if (rain > 0) {
-      alert3 = <div className="alert-rain"><span>warning: </span>More than 13mm of rain expected.</div>;
+      alert3 = <div className="alert-rain"><span>warning: </span>More than 13mm of rain expected. Mark your watering task complete.</div>;
     }
     // console.log("rain:", rain);
     return (<div>{alert1}{alert2}{alert3}</div>);
