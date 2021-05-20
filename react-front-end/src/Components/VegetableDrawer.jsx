@@ -62,10 +62,14 @@ const useStyles = makeStyles((theme) => ({
     padding: '10px',
   },
   buildGardenButton: {
-    marginTop: 25,
+    // marginTop: 10,
+    display: "flex",
+    justifyContent: "center",
+    marginLeft: '22%',
     marginBottom: -100,
     borderLeft: 150,
     borderRight: 150,
+    width: '175px',
   },
   vegcontent: {
     flexGrow: 1,
@@ -145,7 +149,7 @@ export default function VegetableDrawer(props) {
         </IconButton>
       </div>
       <div className="vegheader">
-        <h2> Vegetable Basket</h2>
+        <h2> Bubba's Basket</h2>
         <img
           className={classes.vegAvatar}
           src={"../images/avatars/vegetable-box.png"}
