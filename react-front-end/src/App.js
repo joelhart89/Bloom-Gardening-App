@@ -1,22 +1,21 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
-import Sidebar from './Components/Sidebar';
-import { makeStyles } from '@material-ui/core/styles';
-import VegetableAbout from './Components/Vegetable/VegetableAbout';
-import Dashboard from './Components/Dashboard'
-import Vegetables from './Components/Vegetables'
-import VegetableDrawer from './Components/VegetableDrawer';
-import Home from './Components/Home/Home'
-import Footer from './Components/Home/Footer'
-import About from './Components/About/About'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Sidebar from "./Components/Sidebar";
+import { makeStyles } from "@material-ui/core/styles";
+import VegetableAbout from "./Components/Vegetable/VegetableAbout";
+import Dashboard from "./Components/Dashboard";
+import Vegetables from "./Components/Vegetables";
+import VegetableDrawer from "./Components/VegetableDrawer";
+import Home from "./Components/Home/Home";
+import Footer from "./Components/Home/Footer";
+import About from "./Components/About/About";
 
 const useStyles = makeStyles({
   row: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginBottom: '250px',
-
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: "250px",
   },
   gridContainer: {
     paddingLeft: "40px",
@@ -61,9 +60,8 @@ export default function App() {
             <VegetableAbout />
           </Route>
         </main>
-        <Footer/>
+        <Footer />
       </Router>
-     
     </Switch>
   );
 }
