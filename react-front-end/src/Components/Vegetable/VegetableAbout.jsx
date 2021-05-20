@@ -1,6 +1,8 @@
-import React from 'react';
-import './VegetableAbout.scss';
+import React, { useEffect } from "react";
+import "./VegetableAbout.scss";
 import useAppData from "../../hooks/useAppData";
+import { Link } from "react-router-dom";
+
 import Alert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 import Collapse from '@material-ui/core/Collapse';
@@ -25,8 +27,18 @@ export default function VegetableAbout() {
 
 
 
+  function ScrollToTopOnMount() {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
+    return null;
+  }
+
   return (
+
     <div className="content">
+              <ScrollToTopOnMount />
        <div className={classes.alert}>
       <Collapse in={info}>
         <Alert
@@ -68,8 +80,16 @@ export default function VegetableAbout() {
               </div>
             </div>
           </div>
+        ))}
+        <br />
+      </div>
+        <div className="container">
+        <Link to="/build" className="veg-animated-word">
+            <p>GET STARTED</p>
+        </Link>
         </div>
-      ))}
-    </div>
-  )
+     
+    </main>
+
+  );
 }

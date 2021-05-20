@@ -74,7 +74,7 @@ export default function NestedList() {
         </Link>
       <Divider />
 
-      <Link to="/vegetables"className='a'>
+      <Link to="/about"className='a'>
         <ListItem button>
           <ListItemIcon>
             <InfoIcon className="icon"/>
