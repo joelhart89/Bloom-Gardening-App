@@ -34,12 +34,12 @@ export default function VegetableAbout() {
           </div>
         ))}
         <br />
-        <Link to="/vegetables" className="animated-word">
-          <div className="container">
-            <p>GET STARTED</p>
-          </div>
-        </Link>
       </div>
+        <div className="container">
+        <Link to="/build" className="veg-animated-word">
+            <p>GET STARTED</p>
+        </Link>
+        </div>
      
     </main>
 
