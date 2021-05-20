@@ -20,7 +20,6 @@ export default function Notifications({tasks}) {
   return (
     
     <div>
-       <button onClick={notify}>Notify !</button>
         <ToastContainer />
     </div>
   )
