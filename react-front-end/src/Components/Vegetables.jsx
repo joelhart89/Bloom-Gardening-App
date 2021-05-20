@@ -51,6 +51,13 @@ export default function Vegetables() {
 
   const classes = useStyles();
   
+  function ScrollToTopOnMount() {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
+    return null;
+  }
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -98,6 +105,7 @@ export default function Vegetables() {
 
   return (
     <div className="box"> 
+      <ScrollToTopOnMount />
     <div className={classes.alert}>
       <Collapse in={info}>
         <Alert

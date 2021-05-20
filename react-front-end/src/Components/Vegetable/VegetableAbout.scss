@@ -65,17 +65,17 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif,;
 }
 
-.container {
-	// height: 50%;
-	// display: flex;
+.vegcontainer {
+	height: 100%;
+	display: flex;
   // flex-direction: row;
-  // height: 10vh;
+  height: 20vh;
 	align-items: center;
-  margin-bottom: 300px;
-
+  margin-bottom: 250px;
+  margin-top: 110px;
   // justify-content: center;
 }
-.veg-animated-word {
+.veganimated-word {
 	letter-spacing: 0.4em;
 	// font-weight: 600;
 	font-size: 42px;
@@ -91,7 +91,7 @@
   text-decoration: none;
 }
 
-.veg-animated-word:hover {
+.veganimated-word:hover {
 	color: #1c4a47;
   outline-color: rgba(71, 126, 232, 0);
   outline-offset: 70px;

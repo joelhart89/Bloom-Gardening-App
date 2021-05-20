@@ -36,36 +36,36 @@ export default function VegetableAbout() {
   }
 
   return (
-
+    
     <div className="content">
-              <ScrollToTopOnMount />
-       <div className={classes.alert}>
-      <Collapse in={info}>
-        <Alert
-          severity="info"
-          action={
-            <IconButton
-              aria-label="close"
-              color="inherit"
-              size="small"
-              onClick={() => {
-                setInfo(false);
-              }}
-            >
-              <CloseIcon fontSize="inherit" />
-            </IconButton>
-          }
-        >
-          <div className="fontSize">
-            Below you will find a short discription about each vegetable. Use this resource to browse
-            and find what vegetables you want to grow. Note some of the health benefits of each one!
-            <br/>
-            <br/>
+      <ScrollToTopOnMount />
+      <div className={classes.alert}>
+        <Collapse in={info}>
+          <Alert
+            severity="info"
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setInfo(false);
+                }}
+              >
+                <CloseIcon fontSize="inherit" />
+              </IconButton>
+            }
+          >
+            <div className="fontSize">
+              Below you will find a short discription about each vegetable. Use this resource to browse
+              and find what vegetables you want to grow. Note some of the health benefits of each one!
+            <br />
+              <br />
             Once you have the information you need, click Build My Guarden to get started.
           </div>
-        </Alert>
-      </Collapse>
-    </div>
+          </Alert>
+        </Collapse>
+      </div>
       {state.vegetables.map(veg => (
         <div className="mainCard">
           <div className="flipCard">
@@ -80,16 +80,14 @@ export default function VegetableAbout() {
               </div>
             </div>
           </div>
-        ))}
-        <br />
-      </div>
-        <div className="container">
-        <Link to="/build" className="veg-animated-word">
-            <p>GET STARTED</p>
-        </Link>
         </div>
-     
-    </main>
-
-  );
+      ))}
+      <br />
+      <div className="vegcontainer">
+        <Link to="/build" className="veganimated-word">
+          <p>GET STARTED</p>
+        </Link>
+      </div>
+    </div>
+  )
 }
