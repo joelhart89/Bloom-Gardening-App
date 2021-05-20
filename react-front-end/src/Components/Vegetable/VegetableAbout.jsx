@@ -36,7 +36,6 @@ export default function VegetableAbout() {
   }
 
   return (
-
     <div className="content">
       <ScrollToTopOnMount />
       <div className={classes.alert}>
@@ -61,7 +60,7 @@ export default function VegetableAbout() {
               and find what vegetables you want to grow. Note some of the health benefits of each one!
             <br />
               <br />
-            Once you have the information you need, click Build My Garden to get started.
+            Once you have the information you need, click Get Started.
           </div>
           </Alert>
         </Collapse>
