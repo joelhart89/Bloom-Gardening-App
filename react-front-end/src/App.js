@@ -8,6 +8,7 @@ import Vegetables from './Components/Vegetables'
 import VegetableDrawer from './Components/VegetableDrawer';
 import Home from './Components/Home/Home'
 import Footer from './Components/Home/Footer'
+import About from './Components/About/About'
 
 const useStyles = makeStyles({
   row: {
@@ -33,6 +34,10 @@ export default function App() {
       <Router>
         <Route path="/home">
           <Home />
+        </Route>
+
+        <Route path="/about">
+          <About />
         </Route>
 
         <Route path="/">
