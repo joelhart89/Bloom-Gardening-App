@@ -29,6 +29,12 @@ export default function Harvest() {
     setMyHarvest(myInfo)
   }
 
+  const task_date = function (day) {
+    const harvest_date = moment().add(day, 'days')
+    const counter = moment(harvest_date).fromNow();
+    return counter;
+  }
+
   return (
     <main className="harvest-card">
       <div className="harvest-container">
@@ -39,6 +45,7 @@ export default function Harvest() {
               <th></th>
               <th>PROGRESS</th>
               <th></th>
+              <th>HARVEST</th>
             </tr>
           </thead>
           <tbody className="harvest-body">
@@ -64,6 +71,7 @@ export default function Harvest() {
                     alt="img"
                   />
                 </td>
+                <td>{getProgress(x.planted_date, x.harvest_date)}</td>
               </tr>
             )}
           </tbody>

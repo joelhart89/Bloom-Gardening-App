@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import useAppData from "../hooks/useAppData";
 import { useParams } from "react-router-dom";
+import Collapse from '@material-ui/core/Collapse';
+import Alert from '@material-ui/lab/Alert';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 import CheckCircleRoundedIcon from '@material-ui/icons/CheckCircleRounded';
 import 'font-awesome/css/font-awesome.min.css';
 import './Planting.scss';
@@ -9,6 +13,7 @@ const axios = require('axios');
 
 export default function Planting() {
   const [plants, setPlants] = useState([]);
+  const [info, setInfo] = React.useState(true);
   let { id } = useParams();
   const { state, markComplete, plant } = useAppData();
 
@@ -36,6 +41,27 @@ export default function Planting() {
     <main className="plant-card">
       <div className="plant-container">
         <div className="plant-hdr">Planting Instructions</div>
+        <Collapse in={info}>
+          <Alert
+            severity="info"
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setInfo(false);
+                }}
+              >
+                <CloseIcon fontSize="inherit" />
+              </IconButton>
+            }
+          >
+            <div className="fontSize">
+              Once you've planted your vegetables, check them off below!
+          </div>
+          </Alert>
+        </Collapse>
         <table className="plant-instructions">
           <thead >
             <tr >
@@ -71,7 +97,7 @@ export default function Planting() {
                   {x.depth}cm
                 </td>
                 <td>
-                  <CheckCircleRoundedIcon className="done" onClick={() => {
+                  <CheckCircleRoundedIcon className="plant-done" onClick={() => {
                     markComplete(plants[i]);
                     plant(x.id);
                   }}

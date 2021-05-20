@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: row;
   overflow: auto;
-  background-color: white;
+  background-color: rgb(250, 250, 250);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
@@ -29,7 +29,8 @@
   height: auto;
 }
 
-.done {
+.plant-done {
+  margin-left: 21px;
   color: lightgrey;
   :hover {
     color: #007261;
@@ -53,7 +54,7 @@
     border-bottom: 1px solid #ddd;
   }
   th {
-    background: white;
+    background: rgb(250, 250, 250);
     position: sticky;
     top: 0; /* Don't forget this, required for the stickiness */
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);

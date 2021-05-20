@@ -2,8 +2,8 @@ import React from "react";
 import styled from 'styled-components';
 
 
-   
- const Box = styled.div`
+
+const Box = styled.div`
   padding-top: 10, 40, 10, 40 ; 
   background: #202020;
   position: relative;
@@ -13,7 +13,7 @@ import styled from 'styled-components';
     padding: 30px 10px;
   }
 `;
-   
+
 const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -21,8 +21,8 @@ const Container = styled.div`
     max-width: 1000px;
     margin: 0 auto;
 `
-   
- const Column = styled.div`
+
+const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -30,7 +30,7 @@ const Container = styled.div`
   margin-bottom: 10px;
   margin-left: 60px;
 `;
-   
+
 const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 
@@ -42,10 +42,11 @@ const Row = styled.div`
                            minmax(200px, 1fr));
   }
 `;
-   
- const FooterLink = styled.a`
+
+const FooterLink = styled.a`
   color: #b1d2db;
   margin-bottom: 8px;
+  font-family: Nunito;
   font-size: 16px;
   text-decoration: none;
    
@@ -54,22 +55,26 @@ const Row = styled.div`
       transition: 200ms ease-in;
   }
 `;
-   
- const Heading = styled.p`
+
+const Heading = styled.p`
   font-size: 22px;
   color: #b1d2db;
   margin-top: 20px;
   margin-bottom:15px;
+  font-family: Nunito;
   font-weight: bold;
 `;
-  
+
 const Footer = () => {
   return (
     <Box>
-      <h1 style={{ color: "#b1d2db", 
-                   textAlign: "center",
-                   paddingTop: '20px', 
-                   marginTop: "-200px" }}>
+      <h1 style={{
+        color: "#b1d2db",
+        fontFamily: "Nunito",
+        textAlign: "center",
+        paddingTop: '20px',
+        marginTop: "-200px"
+      }}>
         Bloom: A beginners guide to growing your own produce!
       </h1>
       <Container>
