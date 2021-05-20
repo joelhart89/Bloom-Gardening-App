@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '2rem',
   },
   colorText: {
-    color: '#b1d2db',
+    marginLeft: '20px',
   },
   container: {
     textAlign: 'center',
@@ -66,8 +66,9 @@ export default function Header() {
       >
         <div className={classes.container}>
           <h1 className={classes.title}>
-            Welcome to <br />
-            B<span className={classes.colorText}>loom</span>
+            Welcome to <br/>
+            <div>
+                <img className={classes.colorText} src={"../images/logos/bloom-sprout.svg"} alt='' /></div>
           </h1>
           <Scroll to="place-to-visit" smooth={true}>
             <IconButton>
