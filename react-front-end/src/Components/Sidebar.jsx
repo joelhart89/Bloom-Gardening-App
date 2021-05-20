@@ -64,16 +64,15 @@ const useStyles = makeStyles((theme) => ({
   colorTextBloom: {
     display: 'flex',
     justifyContent: 'flex-start',
-    color: "#b1d2db",
-    alignItems: 'center',
+    marginTop: '13px',
+    maxHeight: '30px',
+    width: 'auto',
   },
   avatar: {
-    maxWidth: '60px',
-    maxHeight: '60px',
+    maxWidth: '50px',
+    maxHeight: '50px',
     marginRight: '30px',
-    borderRadius: '30px',
-    border: '2px',
-    borderColor: '#b1d2db'
+    borderRadius: '50%',
   },
   colorTextLogout: {
     display: 'flex',
@@ -81,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#b1d2db",
     alignItems: 'center',
     justifyContent: 'flex-end',
+    fontFamily: "Nunito",
     fontSize: '20px',
     paddingTop: '8px',
     paddingRight: '10px',
@@ -115,8 +115,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "start",
     justifyContent: "space-around",
     color: "#b1d2db",
+    fontFamily: 'Nunito',
     fontSize: "2em",
-    fontWeight: "bold",
+    fontWeight: "bolder",
 
     padding: theme.spacing(-1, 4),
     // necessary for content to be below app bar
@@ -178,10 +179,11 @@ export default function Sidebar() {
           </IconButton>
           <h1 className={classes.h1}>
             <Link to='/home'>
-              <div className={classes.colorTextBloom}>Bloom</div>
+              <div>
+                <img className={classes.colorTextBloom} src={"../images/logos/bloom-sprout.svg"} alt='' /></div>
             </Link>
             <div className={classes.colorTextLogout}>
-              <img className={classes.avatar} src={"../images/avatars/avatar.png"} alt='' />
+              <img className={classes.avatar} src={"../images/avatars/farmer.png"} alt='' />
             Logout</div>
           </h1>
         </Toolbar>
@@ -200,7 +202,7 @@ export default function Sidebar() {
         }}
       >
         <div className="toolbar">
-          <h2 className={classes.toolbar}>
+          <h3 className={classes.toolbar}>
             {" "}
             Welcome, Bubba!
             <IconButton onClick={handleDrawerClose} className={classes.toolbar}>
@@ -210,7 +212,7 @@ export default function Sidebar() {
                 <ChevronLeftIcon />
               )}
             </IconButton>
-          </h2>
+          </h3>
         </div>
 
         <NestedList />
