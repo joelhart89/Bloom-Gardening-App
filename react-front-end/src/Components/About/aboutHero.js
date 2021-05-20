@@ -1,32 +1,32 @@
 
 const about = [
   {
-    title: "Founder: Andy Anderson",
+    title: "Founder: Christian Nally",
     description:
-      "Starting your first garden can be overwhelming... What plants should I choose? When should I water? Bloom answers these questions for you, providing you with the knowledge and tools to know what plants to choose and how to care for them. ",
+      "Without Christians vision, wisdom and knowledge Bloom would be nothing.. Blooms innovative design was inspired by Christians great teachings. You can find Christian usually on a boat playing his guitar, or standing in this awesome power stance.",
     imageUrl: process.env.PUBLIC_URL + '/assets/Nally.png',
-    time: 1000,
+    time: 4000,
   },
   {
     title: "CFO: Chelsea Wagner",
     description:
-      "Forgetting how and when to care for your produce can kill your garden. Bloom helps us absent minded folks by sending notifications so you know when to water, fertilize, and weed. We will even give you weather updates to let you know you can take a day off.",
+      "From the garden to the kitchen. I've always enjoyed bouncing between the outdoors and the pantry. Now that I've become more familiar with how to properly garden, I now have the privilege of having my pantry outside! To learn more about my work check my github ",
     imageUrl: process.env.PUBLIC_URL + 'assets/Chelsea.jpg',
-    time: 3000,
+    time: 4000,
   },
   {
     title: "COO: Joel Hart",
     description:
-      "Can't wait? Click the link below to start learning about fruits and vegetables. We will send you to our planning page so you can pick produce that fits your needs.Click build your garden and we will provide your own personal garden plan. ",
+      "I've always loved Gardening. Growing up I would spend weekends with my grandpa who had a 3 acre garden in White Rock. I learned so much from him, and now I have the opportunity to share those things with others through Bloom. To learn more about my work check my github ",
     imageUrl: process.env.PUBLIC_URL + 'assets/Joel.jpg',
     time: 4000,
   },
   {
     title: 'CEO: Cole Kubossek',
     description:
-      "I never used to be interested in gardening, but lately I have started to appreciate things that I have taken for granted and become interested in participating in. Gardening is one of those examples. While I don't have the space to grow everything and its now always a success, it feels good to get started providing for myself in non financial ways and food was the first step! Through I definitely need some help",
+      "I never used to be interested in gardening, but lately I have started to appreciate things that I have taken for granted and become interested in participating in. Gardening is one of those examples. While I don't have the space to grow everything and its now always a success I love the process. To learn more about my work check my github.",
     imageUrl: process.env.PUBLIC_URL + 'assets/Cole.jpg',
-    time: 2000,
+    time: 4000,
   },
 
 ];

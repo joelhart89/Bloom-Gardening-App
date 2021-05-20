@@ -5,7 +5,6 @@ import ImageCard from "../Home/ImageCard";
 import places from "../Home/hero";
 import useWindowPosition from "../../hooks/useWindowPosition";
 import './AboutPictures.scss';
-import { Link } from "react-router-dom";
 import about from "./aboutHero";
 
 const useStyles = makeStyles((theme) => ({
@@ -53,11 +52,6 @@ export default function () {
         <ImageCard place={about[3]} checked={checked} />
       </div>
       <div className={classes.div3}>
-        <Link to="/vegetables" class="animated-word">
-        <div class="container">
-          <p>GET STARTED</p>
-        </div>
-        </Link>
       </div>
     </div>
   );

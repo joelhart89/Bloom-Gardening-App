@@ -54,7 +54,7 @@ export default function () {
       <div className={classes.div3}>
         <Link to="/vegetables" class="animated-word">
         <div class="container">
-          <p>GET STARTED</p>
+          <p>Learn More</p>
         </div>
         </Link>
       </div>

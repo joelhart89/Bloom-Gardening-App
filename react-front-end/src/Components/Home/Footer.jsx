@@ -76,7 +76,7 @@ const Footer = () => {
         <Row>
           <Column>
             <Heading>About Us</Heading>
-            <FooterLink href="#">Team</FooterLink>
+            <FooterLink href="About">Team</FooterLink>
             <FooterLink href="#">Vision</FooterLink>
             <FooterLink href="#">Testimonials</FooterLink>
           </Column>

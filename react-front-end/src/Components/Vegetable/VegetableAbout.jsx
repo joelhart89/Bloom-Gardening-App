@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './VegetableAbout.scss';
 import useAppData from "../../hooks/useAppData";
+import { Link } from "react-router-dom";
 
 export default function VegetableAbout() {
   const { state } = useAppData();
 
+  function ScrollToTopOnMount() {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+  
+    return null;
+  }
+
   return (
     <div className="content">
+      <ScrollToTopOnMount/>
       {state.vegetables.map(veg => (
         <div className="mainCard">
           <div className="flipCard">
@@ -23,6 +33,12 @@ export default function VegetableAbout() {
           </div>
         </div>
       ))}
+         <Link to="/vegetables" class="animated-word">
+        <div class="container">
+          <p>GET STARTED</p>
+        </div>
+        </Link>
     </div>
+    
   )
 }
