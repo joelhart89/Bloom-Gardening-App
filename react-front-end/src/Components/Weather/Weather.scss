@@ -1,5 +1,5 @@
 .weather-card {
-  width: 1010px;
+  width: 1300px;
   height: auto;
   margin-top: 13%;
   padding-bottom: 12px;
@@ -38,8 +38,8 @@
   background-color: #fff6e8;
   // border: 1px solid #ffbe56;
   color: #a7844d;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 14px;
+  font-family: 'Nunito';
+  font-size: 16px;
   padding: 10px 36px;
   margin: 10px;
   border-radius: 5px;
@@ -48,13 +48,14 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+  max-width: max-content;
 }
 .alert-frost {
   background-color: #e5f1ff;
   // border: 1px solid #d6e9ff;
   color: #5b93d3;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 14px;
+  font-family: 'Nunito';
+  font-size: 16px;
   padding: 10px 36px;
   margin: 10px;
   border-radius: 5px;
@@ -63,13 +64,14 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+  max-width: max-content;
 }
 .alert-rain {
   background-color: #ebffed;
   // border: 1px solid #68ff4e;
   color: #297432;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 14px;
+  font-family: 'Nunito';
+  font-size: 16px;
   padding: 10px 36px;
   margin: 10px;
   border-radius: 5px;
@@ -78,4 +80,5 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+  max-width: max-content;
 }
