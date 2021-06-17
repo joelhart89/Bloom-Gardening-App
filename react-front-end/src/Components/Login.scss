@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Sigmar One', cursive;
+	display: flex;
+	margin: 0;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	color: black;
+}

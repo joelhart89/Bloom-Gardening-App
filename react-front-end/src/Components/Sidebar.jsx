@@ -187,15 +187,18 @@ export default function Sidebar() {
 								/>
 							</div>
 						</Link>
-						<div className={classes.colorTextLogout}>
-							<img
-								className={classes.avatar}
-								src={'../images/avatars/farmer.png'}
-								alt=""
-							/>
-							Login
-						</div>
-						<div className={classes.colorTextLogout}>Register</div>
+						<Link to="/login">
+							{' '}
+							<div className={classes.colorTextLogout}>
+								<img
+									className={classes.avatar}
+									src={'../images/avatars/farmer.png'}
+									alt=""
+								/>
+								Login
+							</div>
+							<div className={classes.colorTextLogout}>Register</div>
+						</Link>
 					</h1>
 				</Toolbar>
 			</AppBar>
